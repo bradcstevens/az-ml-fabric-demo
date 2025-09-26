@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: az-ml-fabric-demo
+metadata:
+  template: az-ml-fabric-demo@0.0.1-beta
+  description: Azure ML and Microsoft Fabric integration demo with predictive analytics capabilities
+
+services:
+  api:
+    project: ./
+    host: containerapp
+    language: python
+
+  ml-workspace:
+    project: ./
+    host: azureml
+
+  fabric-workspace:
+    project: ./
+    host: fabric
+
+infra:
+  provider: bicep
+  path: infra
+
+pipeline:
+  variables:
+    - AZURE_LOCATION
+    - AZURE_SUBSCRIPTION_ID
+    - AZURE_PRINCIPAL_ID
+
+hooks:
+  preprovision:
+    shell: sh
+    run: |
+      echo "🔍 Validating infrastructure configuration..."
+      ./scripts/validate-infrastructure.sh ${AZURE_ENV_NAME}
+
+  postprovision:
+    shell: sh
+    run: |
+      echo "✅ Infrastructure provisioned successfully"
+      echo "🔧 Setting up Azure ML workspace..."
+      ./scripts/setup-ml-environment.sh ${AZURE_ENV_NAME}
+      echo "🔗 Configuring Microsoft Fabric integration..."
+
+  postdeploy:
+    shell: sh
+    run: |
+      echo "🎉 Deployment completed successfully!"
+      echo "📊 Azure ML workspace ready at: ${AZURE_ML_WORKSPACE_URL}"
+      echo "📈 Microsoft Fabric workspace ready at: ${FABRIC_WORKSPACE_URL}"
+      echo "🔑 Key Vault: ${AZURE_KEY_VAULT_NAME}"
+      echo "📱 Application Insights: ${AZURE_APPLICATION_INSIGHTS_NAME}"
+      echo ""
+      echo "🚀 Next steps:"
+      echo "1. Open Azure ML Studio: ${AZURE_ML_WORKSPACE_URL}"
+      echo "2. Upload training data to the storage account"
+      echo "3. Create and train your first model"
+      echo "4. Set up Power BI dashboards in Fabric workspace"

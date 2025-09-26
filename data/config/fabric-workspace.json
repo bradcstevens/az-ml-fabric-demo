@@ -1,0 +1,136 @@
+{
+  "workspace_name": "fabric-analytics-workspace",
+  "description": "Microsoft Fabric workspace for predictive analytics MVP",
+  "region": "East US 2",
+  "capacity": {
+    "sku": "F64",
+    "auto_scale": true,
+    "max_capacity": "F256"
+  },
+  "onelake_config": {
+    "storage_account": "fabricanalyticsstorage",
+    "lakehouses": [
+      {
+        "name": "manufacturing-lakehouse",
+        "description": "Manufacturing production data storage",
+        "tables": [
+          {
+            "name": "production_data",
+            "schema": {
+              "timestamp": "datetime",
+              "production_line": "string",
+              "output_quantity": "integer",
+              "defect_rate": "decimal",
+              "machine_efficiency": "decimal",
+              "operator_id": "string",
+              "shift": "string"
+            },
+            "partitioning": ["production_line", "shift"]
+          }
+        ]
+      },
+      {
+        "name": "timeseries-lakehouse",
+        "description": "Time-series data with seasonal patterns",
+        "tables": [
+          {
+            "name": "seasonal_data",
+            "schema": {
+              "date": "date",
+              "value": "decimal",
+              "seasonal_component": "decimal",
+              "trend": "decimal",
+              "day_of_year": "integer"
+            },
+            "partitioning": ["date"]
+          }
+        ]
+      },
+      {
+        "name": "telemetry-lakehouse",
+        "description": "Equipment telemetry and sensor data",
+        "tables": [
+          {
+            "name": "equipment_metrics",
+            "schema": {
+              "equipment_id": "string",
+              "timestamp": "datetime",
+              "temperature": "decimal",
+              "vibration": "decimal",
+              "pressure": "decimal",
+              "flow_rate": "decimal",
+              "status": "string",
+              "runtime_hours": "decimal"
+            },
+            "partitioning": ["equipment_id", "status"]
+          }
+        ]
+      },
+      {
+        "name": "validation-lakehouse",
+        "description": "Controlled anomaly data for model validation",
+        "tables": [
+          {
+            "name": "anomaly_labels",
+            "schema": {
+              "timestamp": "datetime",
+              "equipment_id": "string",
+              "anomaly_type": "string",
+              "severity": "string",
+              "is_anomaly": "boolean",
+              "value": "decimal",
+              "threshold": "decimal",
+              "description": "string"
+            },
+            "partitioning": ["is_anomaly", "severity"]
+          }
+        ]
+      }
+    ],
+    "data_pipelines": [
+      {
+        "name": "real-time-ingestion",
+        "type": "streaming",
+        "source": "Event Hubs",
+        "destination": "telemetry-lakehouse"
+      },
+      {
+        "name": "batch-processing",
+        "type": "batch",
+        "schedule": "daily",
+        "source": "Azure Data Lake",
+        "destination": "manufacturing-lakehouse"
+      }
+    ]
+  },
+  "security": {
+    "access_control": {
+      "rbac_enabled": true,
+      "data_sensitivity_labels": ["Public", "Internal", "Confidential"]
+    },
+    "encryption": {
+      "at_rest": true,
+      "in_transit": true,
+      "key_management": "Microsoft Managed Keys"
+    }
+  },
+  "monitoring": {
+    "logging_enabled": true,
+    "metrics_enabled": true,
+    "alerting": {
+      "email_notifications": ["admin@company.com"],
+      "slack_webhook": "https://hooks.slack.com/services/..."
+    }
+  },
+  "integration": {
+    "azure_ml": {
+      "workspace_name": "azure-ml-predictive-analytics",
+      "compute_instance": "ml-compute-cluster",
+      "auto_ml_enabled": true
+    },
+    "power_bi": {
+      "premium_capacity": true,
+      "dataflow_refresh": "hourly"
+    }
+  }
+}

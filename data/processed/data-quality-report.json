@@ -1,0 +1,73 @@
+{
+  "manufacturing": {
+    "recordCount": 5,
+    "outputQuantityStats": {
+      "mean": 1156,
+      "stdDev": 138.93883546366726,
+      "min": 980,
+      "max": 1350,
+      "count": 5
+    },
+    "defectRateStats": {
+      "mean": 0.016600000000000004,
+      "stdDev": 0.007889233169326408,
+      "min": 0.008,
+      "max": 0.03,
+      "count": 5
+    },
+    "efficiencyStats": {
+      "mean": 0.9380000000000001,
+      "stdDev": 0.027856776554368218,
+      "min": 0.89,
+      "max": 0.97,
+      "count": 5
+    }
+  },
+  "timeseries": {
+    "recordCount": 400,
+    "valueStats": {
+      "mean": 110.40212500000005,
+      "stdDev": 11.18015208905384,
+      "min": 88.92,
+      "max": 132.88,
+      "count": 400
+    },
+    "seasonalStats": {
+      "mean": 0.4704499999999999,
+      "stdDev": 13.628994929836168,
+      "min": -20,
+      "max": 20,
+      "count": 400
+    },
+    "hasSeasonalPattern": true
+  },
+  "telemetry": {
+    "recordCount": 5,
+    "temperatureStats": {
+      "mean": 74.26,
+      "stdDev": 5.053553205418934,
+      "min": 68.5,
+      "max": 82.3,
+      "count": 5
+    },
+    "vibrationStats": {
+      "mean": 2.28,
+      "stdDev": 0.48744230427815766,
+      "min": 1.8,
+      "max": 3.2,
+      "count": 5
+    },
+    "uniqueEquipment": 3
+  },
+  "anomalies": {
+    "recordCount": 5,
+    "anomalyCount": 4,
+    "normalCount": 1,
+    "severityDistribution": {
+      "HIGH": 2,
+      "MEDIUM": 1,
+      "LOW": 1,
+      "NONE": 1
+    }
+  }
+}

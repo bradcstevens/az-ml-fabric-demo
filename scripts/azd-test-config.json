@@ -1,0 +1,234 @@
+{
+  "testConfiguration": {
+    "name": "Azure ML + Fabric Demo Test Suite",
+    "version": "1.0.0",
+    "description": "Comprehensive testing configuration for azd-based deployment",
+    "environments": {
+      "test": {
+        "displayName": "Test Environment",
+        "description": "Automated testing environment",
+        "resourcePrefix": "azmlfabrictest",
+        "location": "East US 2",
+        "tags": {
+          "environment": "test",
+          "purpose": "azd-validation",
+          "auto-cleanup": "true"
+        }
+      },
+      "staging": {
+        "displayName": "Staging Environment",
+        "description": "Pre-production staging environment",
+        "resourcePrefix": "azmlfabricstg",
+        "location": "East US 2",
+        "tags": {
+          "environment": "staging",
+          "purpose": "integration-testing"
+        }
+      }
+    },
+    "testPhases": [
+      {
+        "name": "Infrastructure Validation",
+        "description": "Validate Azure infrastructure provisioning",
+        "tests": [
+          {
+            "name": "resource_group_creation",
+            "type": "infrastructure",
+            "timeout": 300,
+            "required": true
+          },
+          {
+            "name": "azure_ml_workspace",
+            "type": "infrastructure",
+            "timeout": 600,
+            "required": true
+          },
+          {
+            "name": "storage_account",
+            "type": "infrastructure",
+            "timeout": 300,
+            "required": true
+          },
+          {
+            "name": "key_vault",
+            "type": "infrastructure",
+            "timeout": 300,
+            "required": true
+          },
+          {
+            "name": "container_registry",
+            "type": "infrastructure",
+            "timeout": 300,
+            "required": false
+          },
+          {
+            "name": "monitoring_resources",
+            "type": "infrastructure",
+            "timeout": 300,
+            "required": true
+          }
+        ]
+      },
+      {
+        "name": "Application Deployment",
+        "description": "Validate application and service deployment",
+        "dependsOn": ["Infrastructure Validation"],
+        "tests": [
+          {
+            "name": "api_deployment",
+            "type": "application",
+            "timeout": 900,
+            "required": true
+          },
+          {
+            "name": "ml_pipeline_deployment",
+            "type": "application",
+            "timeout": 1200,
+            "required": true
+          },
+          {
+            "name": "monitoring_setup",
+            "type": "application",
+            "timeout": 300,
+            "required": true
+          }
+        ]
+      },
+      {
+        "name": "Functional Testing",
+        "description": "End-to-end functionality validation",
+        "dependsOn": ["Application Deployment"],
+        "tests": [
+          {
+            "name": "data_pipeline",
+            "type": "functional",
+            "timeout": 1800,
+            "required": true
+          },
+          {
+            "name": "ml_training",
+            "type": "functional",
+            "timeout": 3600,
+            "required": true
+          },
+          {
+            "name": "prediction_endpoints",
+            "type": "functional",
+            "timeout": 300,
+            "required": true
+          },
+          {
+            "name": "legacy_integration",
+            "type": "functional",
+            "timeout": 600,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "Performance Testing",
+        "description": "Performance and load testing",
+        "dependsOn": ["Functional Testing"],
+        "tests": [
+          {
+            "name": "api_load_test",
+            "type": "performance",
+            "timeout": 600,
+            "required": false
+          },
+          {
+            "name": "response_time_test",
+            "type": "performance",
+            "timeout": 300,
+            "required": true
+          }
+        ]
+      },
+      {
+        "name": "Security Testing",
+        "description": "Security and compliance validation",
+        "dependsOn": ["Infrastructure Validation"],
+        "tests": [
+          {
+            "name": "rbac_validation",
+            "type": "security",
+            "timeout": 300,
+            "required": true
+          },
+          {
+            "name": "network_security",
+            "type": "security",
+            "timeout": 300,
+            "required": true
+          },
+          {
+            "name": "data_encryption",
+            "type": "security",
+            "timeout": 300,
+            "required": true
+          }
+        ]
+      }
+    ],
+    "slaRequirements": {
+      "api_response_time": {
+        "threshold": "2000ms",
+        "description": "API endpoints must respond within 2 seconds"
+      },
+      "batch_pipeline_completion": {
+        "threshold": "30min",
+        "description": "Batch scoring pipeline must complete within 30 minutes"
+      },
+      "system_availability": {
+        "threshold": "99.9%",
+        "description": "System availability must be at least 99.9%"
+      },
+      "ml_model_accuracy": {
+        "threshold": "0.85",
+        "description": "ML models must achieve minimum 85% accuracy"
+      }
+    },
+    "alerting": {
+      "notificationChannels": [
+        {
+          "type": "email",
+          "address": "ml-team@company.com",
+          "severity": ["critical", "high"]
+        },
+        {
+          "type": "webhook",
+          "url": "https://hooks.slack.com/services/...",
+          "severity": ["critical"]
+        }
+      ],
+      "alertRules": [
+        {
+          "name": "High Error Rate",
+          "condition": "error_rate > 5%",
+          "severity": "high",
+          "description": "Alert when error rate exceeds 5%"
+        },
+        {
+          "name": "Response Time Degradation",
+          "condition": "avg_response_time > 2000ms",
+          "severity": "medium",
+          "description": "Alert when average response time exceeds 2 seconds"
+        },
+        {
+          "name": "Service Unavailable",
+          "condition": "availability < 99%",
+          "severity": "critical",
+          "description": "Alert when service availability drops below 99%"
+        }
+      ]
+    },
+    "cleanup": {
+      "autoCleanup": true,
+      "retentionDays": 7,
+      "excludePatterns": [
+        "*-prod-*",
+        "*-production-*"
+      ]
+    }
+  }
+}

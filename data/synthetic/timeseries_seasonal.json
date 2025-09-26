@@ -1,0 +1,2802 @@
+[
+  {
+    "date": "2024-01-01",
+    "value": 103,
+    "seasonal_component": 0,
+    "trend": 103,
+    "day_of_year": 365
+  },
+  {
+    "date": "2024-01-02",
+    "value": 100.58,
+    "seasonal_component": 0.34,
+    "trend": 100.24,
+    "day_of_year": 1
+  },
+  {
+    "date": "2024-01-03",
+    "value": 101.4,
+    "seasonal_component": 0.69,
+    "trend": 100.71,
+    "day_of_year": 2
+  },
+  {
+    "date": "2024-01-04",
+    "value": 103.47,
+    "seasonal_component": 1.03,
+    "trend": 102.44,
+    "day_of_year": 3
+  },
+  {
+    "date": "2024-01-05",
+    "value": 101.65,
+    "seasonal_component": 1.38,
+    "trend": 100.28,
+    "day_of_year": 4
+  },
+  {
+    "date": "2024-01-06",
+    "value": 106.72,
+    "seasonal_component": 1.72,
+    "trend": 105,
+    "day_of_year": 5
+  },
+  {
+    "date": "2024-01-07",
+    "value": 99.91,
+    "seasonal_component": 2.06,
+    "trend": 97.85,
+    "day_of_year": 6
+  },
+  {
+    "date": "2024-01-08",
+    "value": 98.01,
+    "seasonal_component": 2.4,
+    "trend": 95.6,
+    "day_of_year": 7
+  },
+  {
+    "date": "2024-01-09",
+    "value": 103.99,
+    "seasonal_component": 2.75,
+    "trend": 101.25,
+    "day_of_year": 8
+  },
+  {
+    "date": "2024-01-10",
+    "value": 98.88,
+    "seasonal_component": 3.09,
+    "trend": 95.79,
+    "day_of_year": 9
+  },
+  {
+    "date": "2024-01-11",
+    "value": 105.27,
+    "seasonal_component": 3.43,
+    "trend": 101.84,
+    "day_of_year": 10
+  },
+  {
+    "date": "2024-01-12",
+    "value": 102.33,
+    "seasonal_component": 3.76,
+    "trend": 98.57,
+    "day_of_year": 11
+  },
+  {
+    "date": "2024-01-13",
+    "value": 101.5,
+    "seasonal_component": 4.1,
+    "trend": 97.4,
+    "day_of_year": 12
+  },
+  {
+    "date": "2024-01-14",
+    "value": 105.65,
+    "seasonal_component": 4.44,
+    "trend": 101.21,
+    "day_of_year": 13
+  },
+  {
+    "date": "2024-01-15",
+    "value": 106.09,
+    "seasonal_component": 4.77,
+    "trend": 101.32,
+    "day_of_year": 14
+  },
+  {
+    "date": "2024-01-16",
+    "value": 110.4,
+    "seasonal_component": 5.11,
+    "trend": 105.29,
+    "day_of_year": 15
+  },
+  {
+    "date": "2024-01-17",
+    "value": 109.41,
+    "seasonal_component": 5.44,
+    "trend": 103.97,
+    "day_of_year": 16
+  },
+  {
+    "date": "2024-01-18",
+    "value": 105.68,
+    "seasonal_component": 5.77,
+    "trend": 99.91,
+    "day_of_year": 17
+  },
+  {
+    "date": "2024-01-19",
+    "value": 111.89,
+    "seasonal_component": 6.1,
+    "trend": 105.79,
+    "day_of_year": 18
+  },
+  {
+    "date": "2024-01-20",
+    "value": 108.34,
+    "seasonal_component": 6.43,
+    "trend": 101.91,
+    "day_of_year": 19
+  },
+  {
+    "date": "2024-01-21",
+    "value": 107.18,
+    "seasonal_component": 6.75,
+    "trend": 100.43,
+    "day_of_year": 20
+  },
+  {
+    "date": "2024-01-22",
+    "value": 111.91,
+    "seasonal_component": 7.07,
+    "trend": 104.83,
+    "day_of_year": 21
+  },
+  {
+    "date": "2024-01-23",
+    "value": 103.6,
+    "seasonal_component": 7.39,
+    "trend": 96.21,
+    "day_of_year": 22
+  },
+  {
+    "date": "2024-01-24",
+    "value": 105.56,
+    "seasonal_component": 7.71,
+    "trend": 97.85,
+    "day_of_year": 23
+  },
+  {
+    "date": "2024-01-25",
+    "value": 105.19,
+    "seasonal_component": 8.03,
+    "trend": 97.16,
+    "day_of_year": 24
+  },
+  {
+    "date": "2024-01-26",
+    "value": 111.62,
+    "seasonal_component": 8.34,
+    "trend": 103.27,
+    "day_of_year": 25
+  },
+  {
+    "date": "2024-01-27",
+    "value": 109.35,
+    "seasonal_component": 8.66,
+    "trend": 100.69,
+    "day_of_year": 26
+  },
+  {
+    "date": "2024-01-28",
+    "value": 113.19,
+    "seasonal_component": 8.96,
+    "trend": 104.22,
+    "day_of_year": 27
+  },
+  {
+    "date": "2024-01-29",
+    "value": 108.53,
+    "seasonal_component": 9.27,
+    "trend": 99.26,
+    "day_of_year": 28
+  },
+  {
+    "date": "2024-01-30",
+    "value": 111.78,
+    "seasonal_component": 9.57,
+    "trend": 102.21,
+    "day_of_year": 29
+  },
+  {
+    "date": "2024-01-31",
+    "value": 110.95,
+    "seasonal_component": 9.88,
+    "trend": 101.08,
+    "day_of_year": 30
+  },
+  {
+    "date": "2024-02-01",
+    "value": 116.59,
+    "seasonal_component": 10.17,
+    "trend": 106.42,
+    "day_of_year": 31
+  },
+  {
+    "date": "2024-02-02",
+    "value": 114.58,
+    "seasonal_component": 10.47,
+    "trend": 104.11,
+    "day_of_year": 32
+  },
+  {
+    "date": "2024-02-03",
+    "value": 109.37,
+    "seasonal_component": 10.76,
+    "trend": 98.61,
+    "day_of_year": 33
+  },
+  {
+    "date": "2024-02-04",
+    "value": 116.12,
+    "seasonal_component": 11.05,
+    "trend": 105.07,
+    "day_of_year": 34
+  },
+  {
+    "date": "2024-02-05",
+    "value": 115.89,
+    "seasonal_component": 11.33,
+    "trend": 104.55,
+    "day_of_year": 35
+  },
+  {
+    "date": "2024-02-06",
+    "value": 117.07,
+    "seasonal_component": 11.62,
+    "trend": 105.45,
+    "day_of_year": 36
+  },
+  {
+    "date": "2024-02-07",
+    "value": 109.81,
+    "seasonal_component": 11.89,
+    "trend": 97.92,
+    "day_of_year": 37
+  },
+  {
+    "date": "2024-02-08",
+    "value": 115.4,
+    "seasonal_component": 12.17,
+    "trend": 103.23,
+    "day_of_year": 38
+  },
+  {
+    "date": "2024-02-09",
+    "value": 115.83,
+    "seasonal_component": 12.44,
+    "trend": 103.39,
+    "day_of_year": 39
+  },
+  {
+    "date": "2024-02-10",
+    "value": 114.13,
+    "seasonal_component": 12.71,
+    "trend": 101.42,
+    "day_of_year": 40
+  },
+  {
+    "date": "2024-02-11",
+    "value": 119.35,
+    "seasonal_component": 12.97,
+    "trend": 106.38,
+    "day_of_year": 41
+  },
+  {
+    "date": "2024-02-12",
+    "value": 117.7,
+    "seasonal_component": 13.23,
+    "trend": 104.47,
+    "day_of_year": 42
+  },
+  {
+    "date": "2024-02-13",
+    "value": 116.17,
+    "seasonal_component": 13.49,
+    "trend": 102.68,
+    "day_of_year": 43
+  },
+  {
+    "date": "2024-02-14",
+    "value": 120.73,
+    "seasonal_component": 13.74,
+    "trend": 106.99,
+    "day_of_year": 44
+  },
+  {
+    "date": "2024-02-15",
+    "value": 116.5,
+    "seasonal_component": 13.99,
+    "trend": 102.51,
+    "day_of_year": 45
+  },
+  {
+    "date": "2024-02-16",
+    "value": 121.19,
+    "seasonal_component": 14.23,
+    "trend": 106.96,
+    "day_of_year": 46
+  },
+  {
+    "date": "2024-02-17",
+    "value": 114.76,
+    "seasonal_component": 14.47,
+    "trend": 100.29,
+    "day_of_year": 47
+  },
+  {
+    "date": "2024-02-18",
+    "value": 122.05,
+    "seasonal_component": 14.71,
+    "trend": 107.34,
+    "day_of_year": 48
+  },
+  {
+    "date": "2024-02-19",
+    "value": 114.88,
+    "seasonal_component": 14.94,
+    "trend": 99.94,
+    "day_of_year": 49
+  },
+  {
+    "date": "2024-02-20",
+    "value": 118.63,
+    "seasonal_component": 15.17,
+    "trend": 103.46,
+    "day_of_year": 50
+  },
+  {
+    "date": "2024-02-21",
+    "value": 113.11,
+    "seasonal_component": 15.39,
+    "trend": 97.72,
+    "day_of_year": 51
+  },
+  {
+    "date": "2024-02-22",
+    "value": 114.58,
+    "seasonal_component": 15.61,
+    "trend": 98.98,
+    "day_of_year": 52
+  },
+  {
+    "date": "2024-02-23",
+    "value": 121.91,
+    "seasonal_component": 15.82,
+    "trend": 106.09,
+    "day_of_year": 53
+  },
+  {
+    "date": "2024-02-24",
+    "value": 117.28,
+    "seasonal_component": 16.03,
+    "trend": 101.25,
+    "day_of_year": 54
+  },
+  {
+    "date": "2024-02-25",
+    "value": 119.01,
+    "seasonal_component": 16.23,
+    "trend": 102.78,
+    "day_of_year": 55
+  },
+  {
+    "date": "2024-02-26",
+    "value": 115.78,
+    "seasonal_component": 16.43,
+    "trend": 99.35,
+    "day_of_year": 56
+  },
+  {
+    "date": "2024-02-27",
+    "value": 116.39,
+    "seasonal_component": 16.62,
+    "trend": 99.77,
+    "day_of_year": 57
+  },
+  {
+    "date": "2024-02-28",
+    "value": 115.74,
+    "seasonal_component": 16.81,
+    "trend": 98.93,
+    "day_of_year": 58
+  },
+  {
+    "date": "2024-02-29",
+    "value": 121.66,
+    "seasonal_component": 17,
+    "trend": 104.67,
+    "day_of_year": 59
+  },
+  {
+    "date": "2024-03-01",
+    "value": 119.94,
+    "seasonal_component": 17.18,
+    "trend": 102.76,
+    "day_of_year": 60
+  },
+  {
+    "date": "2024-03-02",
+    "value": 117.9,
+    "seasonal_component": 17.35,
+    "trend": 100.55,
+    "day_of_year": 61
+  },
+  {
+    "date": "2024-03-03",
+    "value": 123.65,
+    "seasonal_component": 17.52,
+    "trend": 106.14,
+    "day_of_year": 62
+  },
+  {
+    "date": "2024-03-04",
+    "value": 121.04,
+    "seasonal_component": 17.68,
+    "trend": 103.36,
+    "day_of_year": 63
+  },
+  {
+    "date": "2024-03-05",
+    "value": 122.64,
+    "seasonal_component": 17.84,
+    "trend": 104.8,
+    "day_of_year": 64
+  },
+  {
+    "date": "2024-03-06",
+    "value": 117.27,
+    "seasonal_component": 17.99,
+    "trend": 99.27,
+    "day_of_year": 65
+  },
+  {
+    "date": "2024-03-07",
+    "value": 122.81,
+    "seasonal_component": 18.14,
+    "trend": 104.67,
+    "day_of_year": 66
+  },
+  {
+    "date": "2024-03-08",
+    "value": 122.15,
+    "seasonal_component": 18.28,
+    "trend": 103.86,
+    "day_of_year": 67
+  },
+  {
+    "date": "2024-03-09",
+    "value": 123.12,
+    "seasonal_component": 18.42,
+    "trend": 104.7,
+    "day_of_year": 68
+  },
+  {
+    "date": "2024-03-10",
+    "value": 125.56,
+    "seasonal_component": 18.55,
+    "trend": 107.01,
+    "day_of_year": 69
+  },
+  {
+    "date": "2024-03-10",
+    "value": 122.49,
+    "seasonal_component": 18.68,
+    "trend": 103.82,
+    "day_of_year": 70
+  },
+  {
+    "date": "2024-03-11",
+    "value": 126.97,
+    "seasonal_component": 18.8,
+    "trend": 108.18,
+    "day_of_year": 71
+  },
+  {
+    "date": "2024-03-12",
+    "value": 123.4,
+    "seasonal_component": 18.91,
+    "trend": 104.49,
+    "day_of_year": 72
+  },
+  {
+    "date": "2024-03-13",
+    "value": 123,
+    "seasonal_component": 19.02,
+    "trend": 103.97,
+    "day_of_year": 73
+  },
+  {
+    "date": "2024-03-14",
+    "value": 126.89,
+    "seasonal_component": 19.12,
+    "trend": 107.77,
+    "day_of_year": 74
+  },
+  {
+    "date": "2024-03-15",
+    "value": 124.7,
+    "seasonal_component": 19.22,
+    "trend": 105.47,
+    "day_of_year": 75
+  },
+  {
+    "date": "2024-03-16",
+    "value": 123.38,
+    "seasonal_component": 19.31,
+    "trend": 104.06,
+    "day_of_year": 76
+  },
+  {
+    "date": "2024-03-17",
+    "value": 123.26,
+    "seasonal_component": 19.4,
+    "trend": 103.86,
+    "day_of_year": 77
+  },
+  {
+    "date": "2024-03-18",
+    "value": 125.82,
+    "seasonal_component": 19.48,
+    "trend": 106.33,
+    "day_of_year": 78
+  },
+  {
+    "date": "2024-03-19",
+    "value": 123.15,
+    "seasonal_component": 19.56,
+    "trend": 103.59,
+    "day_of_year": 79
+  },
+  {
+    "date": "2024-03-20",
+    "value": 125.53,
+    "seasonal_component": 19.63,
+    "trend": 105.9,
+    "day_of_year": 80
+  },
+  {
+    "date": "2024-03-21",
+    "value": 120.11,
+    "seasonal_component": 19.69,
+    "trend": 100.42,
+    "day_of_year": 81
+  },
+  {
+    "date": "2024-03-22",
+    "value": 124.1,
+    "seasonal_component": 19.75,
+    "trend": 104.36,
+    "day_of_year": 82
+  },
+  {
+    "date": "2024-03-23",
+    "value": 122.01,
+    "seasonal_component": 19.8,
+    "trend": 102.21,
+    "day_of_year": 83
+  },
+  {
+    "date": "2024-03-24",
+    "value": 125.65,
+    "seasonal_component": 19.84,
+    "trend": 105.81,
+    "day_of_year": 84
+  },
+  {
+    "date": "2024-03-25",
+    "value": 121.05,
+    "seasonal_component": 19.88,
+    "trend": 101.16,
+    "day_of_year": 85
+  },
+  {
+    "date": "2024-03-26",
+    "value": 124.65,
+    "seasonal_component": 19.92,
+    "trend": 104.74,
+    "day_of_year": 86
+  },
+  {
+    "date": "2024-03-27",
+    "value": 121,
+    "seasonal_component": 19.95,
+    "trend": 101.05,
+    "day_of_year": 87
+  },
+  {
+    "date": "2024-03-28",
+    "value": 123.28,
+    "seasonal_component": 19.97,
+    "trend": 103.31,
+    "day_of_year": 88
+  },
+  {
+    "date": "2024-03-29",
+    "value": 120.3,
+    "seasonal_component": 19.99,
+    "trend": 100.32,
+    "day_of_year": 89
+  },
+  {
+    "date": "2024-03-30",
+    "value": 127.79,
+    "seasonal_component": 20,
+    "trend": 107.79,
+    "day_of_year": 90
+  },
+  {
+    "date": "2024-03-31",
+    "value": 119.59,
+    "seasonal_component": 20,
+    "trend": 99.59,
+    "day_of_year": 91
+  },
+  {
+    "date": "2024-04-01",
+    "value": 122.42,
+    "seasonal_component": 20,
+    "trend": 102.42,
+    "day_of_year": 92
+  },
+  {
+    "date": "2024-04-02",
+    "value": 121.24,
+    "seasonal_component": 19.99,
+    "trend": 101.25,
+    "day_of_year": 93
+  },
+  {
+    "date": "2024-04-03",
+    "value": 125.45,
+    "seasonal_component": 19.98,
+    "trend": 105.47,
+    "day_of_year": 94
+  },
+  {
+    "date": "2024-04-04",
+    "value": 128.36,
+    "seasonal_component": 19.96,
+    "trend": 108.4,
+    "day_of_year": 95
+  },
+  {
+    "date": "2024-04-05",
+    "value": 120.85,
+    "seasonal_component": 19.93,
+    "trend": 100.92,
+    "day_of_year": 96
+  },
+  {
+    "date": "2024-04-06",
+    "value": 121.81,
+    "seasonal_component": 19.9,
+    "trend": 101.91,
+    "day_of_year": 97
+  },
+  {
+    "date": "2024-04-07",
+    "value": 123.39,
+    "seasonal_component": 19.87,
+    "trend": 103.53,
+    "day_of_year": 98
+  },
+  {
+    "date": "2024-04-08",
+    "value": 123.27,
+    "seasonal_component": 19.82,
+    "trend": 103.45,
+    "day_of_year": 99
+  },
+  {
+    "date": "2024-04-09",
+    "value": 122.25,
+    "seasonal_component": 19.77,
+    "trend": 102.48,
+    "day_of_year": 100
+  },
+  {
+    "date": "2024-04-10",
+    "value": 120.61,
+    "seasonal_component": 19.72,
+    "trend": 100.89,
+    "day_of_year": 101
+  },
+  {
+    "date": "2024-04-11",
+    "value": 122.95,
+    "seasonal_component": 19.66,
+    "trend": 103.29,
+    "day_of_year": 102
+  },
+  {
+    "date": "2024-04-12",
+    "value": 122.97,
+    "seasonal_component": 19.59,
+    "trend": 103.38,
+    "day_of_year": 103
+  },
+  {
+    "date": "2024-04-13",
+    "value": 125.45,
+    "seasonal_component": 19.52,
+    "trend": 105.93,
+    "day_of_year": 104
+  },
+  {
+    "date": "2024-04-14",
+    "value": 120.34,
+    "seasonal_component": 19.44,
+    "trend": 100.9,
+    "day_of_year": 105
+  },
+  {
+    "date": "2024-04-15",
+    "value": 122.97,
+    "seasonal_component": 19.36,
+    "trend": 103.61,
+    "day_of_year": 106
+  },
+  {
+    "date": "2024-04-16",
+    "value": 125.26,
+    "seasonal_component": 19.27,
+    "trend": 105.99,
+    "day_of_year": 107
+  },
+  {
+    "date": "2024-04-17",
+    "value": 120.86,
+    "seasonal_component": 19.17,
+    "trend": 101.69,
+    "day_of_year": 108
+  },
+  {
+    "date": "2024-04-18",
+    "value": 120.3,
+    "seasonal_component": 19.07,
+    "trend": 101.23,
+    "day_of_year": 109
+  },
+  {
+    "date": "2024-04-19",
+    "value": 120.11,
+    "seasonal_component": 18.97,
+    "trend": 101.15,
+    "day_of_year": 110
+  },
+  {
+    "date": "2024-04-20",
+    "value": 125.85,
+    "seasonal_component": 18.86,
+    "trend": 107,
+    "day_of_year": 111
+  },
+  {
+    "date": "2024-04-21",
+    "value": 123.77,
+    "seasonal_component": 18.74,
+    "trend": 105.03,
+    "day_of_year": 112
+  },
+  {
+    "date": "2024-04-22",
+    "value": 127.1,
+    "seasonal_component": 18.61,
+    "trend": 108.49,
+    "day_of_year": 113
+  },
+  {
+    "date": "2024-04-23",
+    "value": 125.23,
+    "seasonal_component": 18.49,
+    "trend": 106.75,
+    "day_of_year": 114
+  },
+  {
+    "date": "2024-04-24",
+    "value": 120.92,
+    "seasonal_component": 18.35,
+    "trend": 102.57,
+    "day_of_year": 115
+  },
+  {
+    "date": "2024-04-25",
+    "value": 123.71,
+    "seasonal_component": 18.21,
+    "trend": 105.5,
+    "day_of_year": 116
+  },
+  {
+    "date": "2024-04-26",
+    "value": 119.07,
+    "seasonal_component": 18.07,
+    "trend": 101,
+    "day_of_year": 117
+  },
+  {
+    "date": "2024-04-27",
+    "value": 128.4,
+    "seasonal_component": 17.92,
+    "trend": 110.48,
+    "day_of_year": 118
+  },
+  {
+    "date": "2024-04-28",
+    "value": 126.52,
+    "seasonal_component": 17.76,
+    "trend": 108.76,
+    "day_of_year": 119
+  },
+  {
+    "date": "2024-04-29",
+    "value": 125.95,
+    "seasonal_component": 17.6,
+    "trend": 108.35,
+    "day_of_year": 120
+  },
+  {
+    "date": "2024-04-30",
+    "value": 119.65,
+    "seasonal_component": 17.43,
+    "trend": 102.22,
+    "day_of_year": 121
+  },
+  {
+    "date": "2024-05-01",
+    "value": 124.01,
+    "seasonal_component": 17.26,
+    "trend": 106.75,
+    "day_of_year": 122
+  },
+  {
+    "date": "2024-05-02",
+    "value": 121.39,
+    "seasonal_component": 17.09,
+    "trend": 104.3,
+    "day_of_year": 123
+  },
+  {
+    "date": "2024-05-03",
+    "value": 126.45,
+    "seasonal_component": 16.9,
+    "trend": 109.55,
+    "day_of_year": 124
+  },
+  {
+    "date": "2024-05-04",
+    "value": 124.6,
+    "seasonal_component": 16.72,
+    "trend": 107.88,
+    "day_of_year": 125
+  },
+  {
+    "date": "2024-05-05",
+    "value": 127.07,
+    "seasonal_component": 16.53,
+    "trend": 110.55,
+    "day_of_year": 126
+  },
+  {
+    "date": "2024-05-06",
+    "value": 118.03,
+    "seasonal_component": 16.33,
+    "trend": 101.7,
+    "day_of_year": 127
+  },
+  {
+    "date": "2024-05-07",
+    "value": 125.89,
+    "seasonal_component": 16.13,
+    "trend": 109.76,
+    "day_of_year": 128
+  },
+  {
+    "date": "2024-05-08",
+    "value": 117.69,
+    "seasonal_component": 15.92,
+    "trend": 101.77,
+    "day_of_year": 129
+  },
+  {
+    "date": "2024-05-09",
+    "value": 120.14,
+    "seasonal_component": 15.71,
+    "trend": 104.43,
+    "day_of_year": 130
+  },
+  {
+    "date": "2024-05-10",
+    "value": 119.5,
+    "seasonal_component": 15.5,
+    "trend": 104,
+    "day_of_year": 131
+  },
+  {
+    "date": "2024-05-11",
+    "value": 123.94,
+    "seasonal_component": 15.28,
+    "trend": 108.66,
+    "day_of_year": 132
+  },
+  {
+    "date": "2024-05-12",
+    "value": 124.6,
+    "seasonal_component": 15.05,
+    "trend": 109.55,
+    "day_of_year": 133
+  },
+  {
+    "date": "2024-05-13",
+    "value": 119.74,
+    "seasonal_component": 14.82,
+    "trend": 104.92,
+    "day_of_year": 134
+  },
+  {
+    "date": "2024-05-14",
+    "value": 121.1,
+    "seasonal_component": 14.59,
+    "trend": 106.5,
+    "day_of_year": 135
+  },
+  {
+    "date": "2024-05-15",
+    "value": 121.37,
+    "seasonal_component": 14.35,
+    "trend": 107.02,
+    "day_of_year": 136
+  },
+  {
+    "date": "2024-05-16",
+    "value": 116.39,
+    "seasonal_component": 14.11,
+    "trend": 102.28,
+    "day_of_year": 137
+  },
+  {
+    "date": "2024-05-17",
+    "value": 118.16,
+    "seasonal_component": 13.87,
+    "trend": 104.3,
+    "day_of_year": 138
+  },
+  {
+    "date": "2024-05-18",
+    "value": 120.87,
+    "seasonal_component": 13.62,
+    "trend": 107.26,
+    "day_of_year": 139
+  },
+  {
+    "date": "2024-05-19",
+    "value": 119.64,
+    "seasonal_component": 13.36,
+    "trend": 106.28,
+    "day_of_year": 140
+  },
+  {
+    "date": "2024-05-20",
+    "value": 117.01,
+    "seasonal_component": 13.1,
+    "trend": 103.91,
+    "day_of_year": 141
+  },
+  {
+    "date": "2024-05-21",
+    "value": 121.18,
+    "seasonal_component": 12.84,
+    "trend": 108.34,
+    "day_of_year": 142
+  },
+  {
+    "date": "2024-05-22",
+    "value": 123.4,
+    "seasonal_component": 12.58,
+    "trend": 110.83,
+    "day_of_year": 143
+  },
+  {
+    "date": "2024-05-23",
+    "value": 114.64,
+    "seasonal_component": 12.31,
+    "trend": 102.33,
+    "day_of_year": 144
+  },
+  {
+    "date": "2024-05-24",
+    "value": 118.13,
+    "seasonal_component": 12.03,
+    "trend": 106.1,
+    "day_of_year": 145
+  },
+  {
+    "date": "2024-05-25",
+    "value": 122.03,
+    "seasonal_component": 11.76,
+    "trend": 110.27,
+    "day_of_year": 146
+  },
+  {
+    "date": "2024-05-26",
+    "value": 123.81,
+    "seasonal_component": 11.48,
+    "trend": 112.33,
+    "day_of_year": 147
+  },
+  {
+    "date": "2024-05-27",
+    "value": 115.1,
+    "seasonal_component": 11.19,
+    "trend": 103.91,
+    "day_of_year": 148
+  },
+  {
+    "date": "2024-05-28",
+    "value": 119.7,
+    "seasonal_component": 10.9,
+    "trend": 108.8,
+    "day_of_year": 149
+  },
+  {
+    "date": "2024-05-29",
+    "value": 122.36,
+    "seasonal_component": 10.61,
+    "trend": 111.75,
+    "day_of_year": 150
+  },
+  {
+    "date": "2024-05-30",
+    "value": 121.31,
+    "seasonal_component": 10.32,
+    "trend": 110.99,
+    "day_of_year": 151
+  },
+  {
+    "date": "2024-05-31",
+    "value": 113.84,
+    "seasonal_component": 10.02,
+    "trend": 103.81,
+    "day_of_year": 152
+  },
+  {
+    "date": "2024-06-01",
+    "value": 113.07,
+    "seasonal_component": 9.73,
+    "trend": 103.34,
+    "day_of_year": 153
+  },
+  {
+    "date": "2024-06-02",
+    "value": 119.81,
+    "seasonal_component": 9.42,
+    "trend": 110.38,
+    "day_of_year": 154
+  },
+  {
+    "date": "2024-06-03",
+    "value": 114.38,
+    "seasonal_component": 9.12,
+    "trend": 105.26,
+    "day_of_year": 155
+  },
+  {
+    "date": "2024-06-04",
+    "value": 119.17,
+    "seasonal_component": 8.81,
+    "trend": 110.36,
+    "day_of_year": 156
+  },
+  {
+    "date": "2024-06-05",
+    "value": 118.96,
+    "seasonal_component": 8.5,
+    "trend": 110.46,
+    "day_of_year": 157
+  },
+  {
+    "date": "2024-06-06",
+    "value": 115.71,
+    "seasonal_component": 8.19,
+    "trend": 107.52,
+    "day_of_year": 158
+  },
+  {
+    "date": "2024-06-07",
+    "value": 114.75,
+    "seasonal_component": 7.87,
+    "trend": 106.88,
+    "day_of_year": 159
+  },
+  {
+    "date": "2024-06-08",
+    "value": 112.34,
+    "seasonal_component": 7.55,
+    "trend": 104.79,
+    "day_of_year": 160
+  },
+  {
+    "date": "2024-06-09",
+    "value": 116.44,
+    "seasonal_component": 7.23,
+    "trend": 109.2,
+    "day_of_year": 161
+  },
+  {
+    "date": "2024-06-10",
+    "value": 116.02,
+    "seasonal_component": 6.91,
+    "trend": 109.11,
+    "day_of_year": 162
+  },
+  {
+    "date": "2024-06-11",
+    "value": 114.45,
+    "seasonal_component": 6.59,
+    "trend": 107.86,
+    "day_of_year": 163
+  },
+  {
+    "date": "2024-06-12",
+    "value": 113.88,
+    "seasonal_component": 6.26,
+    "trend": 107.62,
+    "day_of_year": 164
+  },
+  {
+    "date": "2024-06-13",
+    "value": 118.34,
+    "seasonal_component": 5.93,
+    "trend": 112.41,
+    "day_of_year": 165
+  },
+  {
+    "date": "2024-06-14",
+    "value": 114.06,
+    "seasonal_component": 5.6,
+    "trend": 108.46,
+    "day_of_year": 166
+  },
+  {
+    "date": "2024-06-15",
+    "value": 108.7,
+    "seasonal_component": 5.27,
+    "trend": 103.42,
+    "day_of_year": 167
+  },
+  {
+    "date": "2024-06-16",
+    "value": 108.99,
+    "seasonal_component": 4.94,
+    "trend": 104.05,
+    "day_of_year": 168
+  },
+  {
+    "date": "2024-06-17",
+    "value": 116.67,
+    "seasonal_component": 4.61,
+    "trend": 112.06,
+    "day_of_year": 169
+  },
+  {
+    "date": "2024-06-18",
+    "value": 110.77,
+    "seasonal_component": 4.27,
+    "trend": 106.5,
+    "day_of_year": 170
+  },
+  {
+    "date": "2024-06-19",
+    "value": 113.53,
+    "seasonal_component": 3.93,
+    "trend": 109.59,
+    "day_of_year": 171
+  },
+  {
+    "date": "2024-06-20",
+    "value": 116.62,
+    "seasonal_component": 3.6,
+    "trend": 113.02,
+    "day_of_year": 172
+  },
+  {
+    "date": "2024-06-21",
+    "value": 116.06,
+    "seasonal_component": 3.26,
+    "trend": 112.81,
+    "day_of_year": 173
+  },
+  {
+    "date": "2024-06-22",
+    "value": 108.81,
+    "seasonal_component": 2.92,
+    "trend": 105.89,
+    "day_of_year": 174
+  },
+  {
+    "date": "2024-06-23",
+    "value": 106.67,
+    "seasonal_component": 2.57,
+    "trend": 104.09,
+    "day_of_year": 175
+  },
+  {
+    "date": "2024-06-24",
+    "value": 111.86,
+    "seasonal_component": 2.23,
+    "trend": 109.63,
+    "day_of_year": 176
+  },
+  {
+    "date": "2024-06-25",
+    "value": 110.75,
+    "seasonal_component": 1.89,
+    "trend": 108.85,
+    "day_of_year": 177
+  },
+  {
+    "date": "2024-06-26",
+    "value": 114.73,
+    "seasonal_component": 1.55,
+    "trend": 113.18,
+    "day_of_year": 178
+  },
+  {
+    "date": "2024-06-27",
+    "value": 112.79,
+    "seasonal_component": 1.2,
+    "trend": 111.59,
+    "day_of_year": 179
+  },
+  {
+    "date": "2024-06-28",
+    "value": 109.06,
+    "seasonal_component": 0.86,
+    "trend": 108.2,
+    "day_of_year": 180
+  },
+  {
+    "date": "2024-06-29",
+    "value": 111.38,
+    "seasonal_component": 0.52,
+    "trend": 110.86,
+    "day_of_year": 181
+  },
+  {
+    "date": "2024-06-30",
+    "value": 104.53,
+    "seasonal_component": 0.17,
+    "trend": 104.36,
+    "day_of_year": 182
+  },
+  {
+    "date": "2024-07-01",
+    "value": 111.31,
+    "seasonal_component": -0.17,
+    "trend": 111.48,
+    "day_of_year": 183
+  },
+  {
+    "date": "2024-07-02",
+    "value": 110.53,
+    "seasonal_component": -0.52,
+    "trend": 111.05,
+    "day_of_year": 184
+  },
+  {
+    "date": "2024-07-03",
+    "value": 108.28,
+    "seasonal_component": -0.86,
+    "trend": 109.14,
+    "day_of_year": 185
+  },
+  {
+    "date": "2024-07-04",
+    "value": 112.5,
+    "seasonal_component": -1.2,
+    "trend": 113.71,
+    "day_of_year": 186
+  },
+  {
+    "date": "2024-07-05",
+    "value": 108.36,
+    "seasonal_component": -1.55,
+    "trend": 109.91,
+    "day_of_year": 187
+  },
+  {
+    "date": "2024-07-06",
+    "value": 110.93,
+    "seasonal_component": -1.89,
+    "trend": 112.82,
+    "day_of_year": 188
+  },
+  {
+    "date": "2024-07-07",
+    "value": 106.49,
+    "seasonal_component": -2.23,
+    "trend": 108.72,
+    "day_of_year": 189
+  },
+  {
+    "date": "2024-07-08",
+    "value": 104.46,
+    "seasonal_component": -2.57,
+    "trend": 107.04,
+    "day_of_year": 190
+  },
+  {
+    "date": "2024-07-09",
+    "value": 110.52,
+    "seasonal_component": -2.92,
+    "trend": 113.44,
+    "day_of_year": 191
+  },
+  {
+    "date": "2024-07-10",
+    "value": 104.11,
+    "seasonal_component": -3.26,
+    "trend": 107.37,
+    "day_of_year": 192
+  },
+  {
+    "date": "2024-07-11",
+    "value": 102.52,
+    "seasonal_component": -3.6,
+    "trend": 106.12,
+    "day_of_year": 193
+  },
+  {
+    "date": "2024-07-12",
+    "value": 104.16,
+    "seasonal_component": -3.93,
+    "trend": 108.09,
+    "day_of_year": 194
+  },
+  {
+    "date": "2024-07-13",
+    "value": 104.21,
+    "seasonal_component": -4.27,
+    "trend": 108.48,
+    "day_of_year": 195
+  },
+  {
+    "date": "2024-07-14",
+    "value": 104.25,
+    "seasonal_component": -4.61,
+    "trend": 108.85,
+    "day_of_year": 196
+  },
+  {
+    "date": "2024-07-15",
+    "value": 100.56,
+    "seasonal_component": -4.94,
+    "trend": 105.5,
+    "day_of_year": 197
+  },
+  {
+    "date": "2024-07-16",
+    "value": 106.59,
+    "seasonal_component": -5.27,
+    "trend": 111.87,
+    "day_of_year": 198
+  },
+  {
+    "date": "2024-07-17",
+    "value": 99.98,
+    "seasonal_component": -5.6,
+    "trend": 105.58,
+    "day_of_year": 199
+  },
+  {
+    "date": "2024-07-18",
+    "value": 108.96,
+    "seasonal_component": -5.93,
+    "trend": 114.89,
+    "day_of_year": 200
+  },
+  {
+    "date": "2024-07-19",
+    "value": 101.58,
+    "seasonal_component": -6.26,
+    "trend": 107.84,
+    "day_of_year": 201
+  },
+  {
+    "date": "2024-07-20",
+    "value": 99.79,
+    "seasonal_component": -6.59,
+    "trend": 106.38,
+    "day_of_year": 202
+  },
+  {
+    "date": "2024-07-21",
+    "value": 104.95,
+    "seasonal_component": -6.91,
+    "trend": 111.86,
+    "day_of_year": 203
+  },
+  {
+    "date": "2024-07-22",
+    "value": 107.62,
+    "seasonal_component": -7.23,
+    "trend": 114.85,
+    "day_of_year": 204
+  },
+  {
+    "date": "2024-07-23",
+    "value": 103.8,
+    "seasonal_component": -7.55,
+    "trend": 111.36,
+    "day_of_year": 205
+  },
+  {
+    "date": "2024-07-24",
+    "value": 105.76,
+    "seasonal_component": -7.87,
+    "trend": 113.63,
+    "day_of_year": 206
+  },
+  {
+    "date": "2024-07-25",
+    "value": 102.89,
+    "seasonal_component": -8.19,
+    "trend": 111.08,
+    "day_of_year": 207
+  },
+  {
+    "date": "2024-07-26",
+    "value": 104.83,
+    "seasonal_component": -8.5,
+    "trend": 113.33,
+    "day_of_year": 208
+  },
+  {
+    "date": "2024-07-27",
+    "value": 96.68,
+    "seasonal_component": -8.81,
+    "trend": 105.49,
+    "day_of_year": 209
+  },
+  {
+    "date": "2024-07-28",
+    "value": 96.98,
+    "seasonal_component": -9.12,
+    "trend": 106.1,
+    "day_of_year": 210
+  },
+  {
+    "date": "2024-07-29",
+    "value": 106.07,
+    "seasonal_component": -9.42,
+    "trend": 115.5,
+    "day_of_year": 211
+  },
+  {
+    "date": "2024-07-30",
+    "value": 96.38,
+    "seasonal_component": -9.73,
+    "trend": 106.1,
+    "day_of_year": 212
+  },
+  {
+    "date": "2024-07-31",
+    "value": 104.64,
+    "seasonal_component": -10.02,
+    "trend": 114.67,
+    "day_of_year": 213
+  },
+  {
+    "date": "2024-08-01",
+    "value": 102.53,
+    "seasonal_component": -10.32,
+    "trend": 112.85,
+    "day_of_year": 214
+  },
+  {
+    "date": "2024-08-02",
+    "value": 102.2,
+    "seasonal_component": -10.61,
+    "trend": 112.81,
+    "day_of_year": 215
+  },
+  {
+    "date": "2024-08-03",
+    "value": 99.97,
+    "seasonal_component": -10.9,
+    "trend": 110.87,
+    "day_of_year": 216
+  },
+  {
+    "date": "2024-08-04",
+    "value": 94.82,
+    "seasonal_component": -11.19,
+    "trend": 106.01,
+    "day_of_year": 217
+  },
+  {
+    "date": "2024-08-05",
+    "value": 102.93,
+    "seasonal_component": -11.48,
+    "trend": 114.41,
+    "day_of_year": 218
+  },
+  {
+    "date": "2024-08-06",
+    "value": 96.9,
+    "seasonal_component": -11.76,
+    "trend": 108.66,
+    "day_of_year": 219
+  },
+  {
+    "date": "2024-08-07",
+    "value": 97.25,
+    "seasonal_component": -12.03,
+    "trend": 109.28,
+    "day_of_year": 220
+  },
+  {
+    "date": "2024-08-08",
+    "value": 101.5,
+    "seasonal_component": -12.31,
+    "trend": 113.8,
+    "day_of_year": 221
+  },
+  {
+    "date": "2024-08-09",
+    "value": 101.07,
+    "seasonal_component": -12.58,
+    "trend": 113.65,
+    "day_of_year": 222
+  },
+  {
+    "date": "2024-08-10",
+    "value": 97.48,
+    "seasonal_component": -12.84,
+    "trend": 110.32,
+    "day_of_year": 223
+  },
+  {
+    "date": "2024-08-11",
+    "value": 98.71,
+    "seasonal_component": -13.1,
+    "trend": 111.81,
+    "day_of_year": 224
+  },
+  {
+    "date": "2024-08-12",
+    "value": 95.42,
+    "seasonal_component": -13.36,
+    "trend": 108.79,
+    "day_of_year": 225
+  },
+  {
+    "date": "2024-08-13",
+    "value": 92.97,
+    "seasonal_component": -13.62,
+    "trend": 106.58,
+    "day_of_year": 226
+  },
+  {
+    "date": "2024-08-14",
+    "value": 93.72,
+    "seasonal_component": -13.87,
+    "trend": 107.58,
+    "day_of_year": 227
+  },
+  {
+    "date": "2024-08-15",
+    "value": 97.7,
+    "seasonal_component": -14.11,
+    "trend": 111.81,
+    "day_of_year": 228
+  },
+  {
+    "date": "2024-08-16",
+    "value": 95.92,
+    "seasonal_component": -14.35,
+    "trend": 110.28,
+    "day_of_year": 229
+  },
+  {
+    "date": "2024-08-17",
+    "value": 93.18,
+    "seasonal_component": -14.59,
+    "trend": 107.77,
+    "day_of_year": 230
+  },
+  {
+    "date": "2024-08-18",
+    "value": 100.88,
+    "seasonal_component": -14.82,
+    "trend": 115.7,
+    "day_of_year": 231
+  },
+  {
+    "date": "2024-08-19",
+    "value": 91.93,
+    "seasonal_component": -15.05,
+    "trend": 106.98,
+    "day_of_year": 232
+  },
+  {
+    "date": "2024-08-20",
+    "value": 94.82,
+    "seasonal_component": -15.28,
+    "trend": 110.1,
+    "day_of_year": 233
+  },
+  {
+    "date": "2024-08-21",
+    "value": 97.24,
+    "seasonal_component": -15.5,
+    "trend": 112.74,
+    "day_of_year": 234
+  },
+  {
+    "date": "2024-08-22",
+    "value": 96.55,
+    "seasonal_component": -15.71,
+    "trend": 112.27,
+    "day_of_year": 235
+  },
+  {
+    "date": "2024-08-23",
+    "value": 93.35,
+    "seasonal_component": -15.92,
+    "trend": 109.28,
+    "day_of_year": 236
+  },
+  {
+    "date": "2024-08-24",
+    "value": 97.7,
+    "seasonal_component": -16.13,
+    "trend": 113.83,
+    "day_of_year": 237
+  },
+  {
+    "date": "2024-08-25",
+    "value": 99.35,
+    "seasonal_component": -16.33,
+    "trend": 115.68,
+    "day_of_year": 238
+  },
+  {
+    "date": "2024-08-26",
+    "value": 98.57,
+    "seasonal_component": -16.53,
+    "trend": 115.1,
+    "day_of_year": 239
+  },
+  {
+    "date": "2024-08-27",
+    "value": 94.53,
+    "seasonal_component": -16.72,
+    "trend": 111.25,
+    "day_of_year": 240
+  },
+  {
+    "date": "2024-08-28",
+    "value": 92.71,
+    "seasonal_component": -16.9,
+    "trend": 109.62,
+    "day_of_year": 241
+  },
+  {
+    "date": "2024-08-29",
+    "value": 94.22,
+    "seasonal_component": -17.09,
+    "trend": 111.3,
+    "day_of_year": 242
+  },
+  {
+    "date": "2024-08-30",
+    "value": 90.2,
+    "seasonal_component": -17.26,
+    "trend": 107.47,
+    "day_of_year": 243
+  },
+  {
+    "date": "2024-08-31",
+    "value": 95.41,
+    "seasonal_component": -17.43,
+    "trend": 112.85,
+    "day_of_year": 244
+  },
+  {
+    "date": "2024-09-01",
+    "value": 92.7,
+    "seasonal_component": -17.6,
+    "trend": 110.3,
+    "day_of_year": 245
+  },
+  {
+    "date": "2024-09-02",
+    "value": 95.09,
+    "seasonal_component": -17.76,
+    "trend": 112.85,
+    "day_of_year": 246
+  },
+  {
+    "date": "2024-09-03",
+    "value": 95.88,
+    "seasonal_component": -17.92,
+    "trend": 113.8,
+    "day_of_year": 247
+  },
+  {
+    "date": "2024-09-04",
+    "value": 95.87,
+    "seasonal_component": -18.07,
+    "trend": 113.94,
+    "day_of_year": 248
+  },
+  {
+    "date": "2024-09-05",
+    "value": 98.31,
+    "seasonal_component": -18.21,
+    "trend": 116.52,
+    "day_of_year": 249
+  },
+  {
+    "date": "2024-09-06",
+    "value": 91.12,
+    "seasonal_component": -18.35,
+    "trend": 109.47,
+    "day_of_year": 250
+  },
+  {
+    "date": "2024-09-07",
+    "value": 91.64,
+    "seasonal_component": -18.49,
+    "trend": 110.12,
+    "day_of_year": 251
+  },
+  {
+    "date": "2024-09-08",
+    "value": 96.48,
+    "seasonal_component": -18.61,
+    "trend": 115.09,
+    "day_of_year": 252
+  },
+  {
+    "date": "2024-09-09",
+    "value": 93.7,
+    "seasonal_component": -18.74,
+    "trend": 112.44,
+    "day_of_year": 253
+  },
+  {
+    "date": "2024-09-10",
+    "value": 96.83,
+    "seasonal_component": -18.86,
+    "trend": 115.68,
+    "day_of_year": 254
+  },
+  {
+    "date": "2024-09-11",
+    "value": 95.99,
+    "seasonal_component": -18.97,
+    "trend": 114.96,
+    "day_of_year": 255
+  },
+  {
+    "date": "2024-09-12",
+    "value": 97.24,
+    "seasonal_component": -19.07,
+    "trend": 116.31,
+    "day_of_year": 256
+  },
+  {
+    "date": "2024-09-13",
+    "value": 92.06,
+    "seasonal_component": -19.17,
+    "trend": 111.23,
+    "day_of_year": 257
+  },
+  {
+    "date": "2024-09-14",
+    "value": 89.32,
+    "seasonal_component": -19.27,
+    "trend": 108.59,
+    "day_of_year": 258
+  },
+  {
+    "date": "2024-09-15",
+    "value": 93.7,
+    "seasonal_component": -19.36,
+    "trend": 113.06,
+    "day_of_year": 259
+  },
+  {
+    "date": "2024-09-16",
+    "value": 94.47,
+    "seasonal_component": -19.44,
+    "trend": 113.92,
+    "day_of_year": 260
+  },
+  {
+    "date": "2024-09-17",
+    "value": 93.83,
+    "seasonal_component": -19.52,
+    "trend": 113.35,
+    "day_of_year": 261
+  },
+  {
+    "date": "2024-09-18",
+    "value": 94.63,
+    "seasonal_component": -19.59,
+    "trend": 114.22,
+    "day_of_year": 262
+  },
+  {
+    "date": "2024-09-19",
+    "value": 96.01,
+    "seasonal_component": -19.66,
+    "trend": 115.67,
+    "day_of_year": 263
+  },
+  {
+    "date": "2024-09-20",
+    "value": 94.39,
+    "seasonal_component": -19.72,
+    "trend": 114.11,
+    "day_of_year": 264
+  },
+  {
+    "date": "2024-09-21",
+    "value": 88.92,
+    "seasonal_component": -19.77,
+    "trend": 108.69,
+    "day_of_year": 265
+  },
+  {
+    "date": "2024-09-22",
+    "value": 91.15,
+    "seasonal_component": -19.82,
+    "trend": 110.97,
+    "day_of_year": 266
+  },
+  {
+    "date": "2024-09-23",
+    "value": 98.37,
+    "seasonal_component": -19.87,
+    "trend": 118.24,
+    "day_of_year": 267
+  },
+  {
+    "date": "2024-09-24",
+    "value": 95.56,
+    "seasonal_component": -19.9,
+    "trend": 115.46,
+    "day_of_year": 268
+  },
+  {
+    "date": "2024-09-25",
+    "value": 96.72,
+    "seasonal_component": -19.93,
+    "trend": 116.65,
+    "day_of_year": 269
+  },
+  {
+    "date": "2024-09-26",
+    "value": 90.64,
+    "seasonal_component": -19.96,
+    "trend": 110.6,
+    "day_of_year": 270
+  },
+  {
+    "date": "2024-09-27",
+    "value": 91.39,
+    "seasonal_component": -19.98,
+    "trend": 111.37,
+    "day_of_year": 271
+  },
+  {
+    "date": "2024-09-28",
+    "value": 95.42,
+    "seasonal_component": -19.99,
+    "trend": 115.41,
+    "day_of_year": 272
+  },
+  {
+    "date": "2024-09-29",
+    "value": 90.39,
+    "seasonal_component": -20,
+    "trend": 110.39,
+    "day_of_year": 273
+  },
+  {
+    "date": "2024-09-30",
+    "value": 91.31,
+    "seasonal_component": -20,
+    "trend": 111.31,
+    "day_of_year": 274
+  },
+  {
+    "date": "2024-10-01",
+    "value": 97.81,
+    "seasonal_component": -20,
+    "trend": 117.8,
+    "day_of_year": 275
+  },
+  {
+    "date": "2024-10-02",
+    "value": 97.75,
+    "seasonal_component": -19.99,
+    "trend": 117.74,
+    "day_of_year": 276
+  },
+  {
+    "date": "2024-10-03",
+    "value": 97.04,
+    "seasonal_component": -19.97,
+    "trend": 117.01,
+    "day_of_year": 277
+  },
+  {
+    "date": "2024-10-04",
+    "value": 97.06,
+    "seasonal_component": -19.95,
+    "trend": 117,
+    "day_of_year": 278
+  },
+  {
+    "date": "2024-10-05",
+    "value": 94.16,
+    "seasonal_component": -19.92,
+    "trend": 114.08,
+    "day_of_year": 279
+  },
+  {
+    "date": "2024-10-06",
+    "value": 98.01,
+    "seasonal_component": -19.88,
+    "trend": 117.89,
+    "day_of_year": 280
+  },
+  {
+    "date": "2024-10-07",
+    "value": 94.54,
+    "seasonal_component": -19.84,
+    "trend": 114.38,
+    "day_of_year": 281
+  },
+  {
+    "date": "2024-10-08",
+    "value": 91.02,
+    "seasonal_component": -19.8,
+    "trend": 110.82,
+    "day_of_year": 282
+  },
+  {
+    "date": "2024-10-09",
+    "value": 89.72,
+    "seasonal_component": -19.75,
+    "trend": 109.47,
+    "day_of_year": 283
+  },
+  {
+    "date": "2024-10-10",
+    "value": 94.15,
+    "seasonal_component": -19.69,
+    "trend": 113.83,
+    "day_of_year": 284
+  },
+  {
+    "date": "2024-10-11",
+    "value": 93.11,
+    "seasonal_component": -19.63,
+    "trend": 112.73,
+    "day_of_year": 285
+  },
+  {
+    "date": "2024-10-12",
+    "value": 93.64,
+    "seasonal_component": -19.56,
+    "trend": 113.19,
+    "day_of_year": 286
+  },
+  {
+    "date": "2024-10-13",
+    "value": 99.47,
+    "seasonal_component": -19.48,
+    "trend": 118.95,
+    "day_of_year": 287
+  },
+  {
+    "date": "2024-10-14",
+    "value": 92,
+    "seasonal_component": -19.4,
+    "trend": 111.4,
+    "day_of_year": 288
+  },
+  {
+    "date": "2024-10-15",
+    "value": 94.39,
+    "seasonal_component": -19.31,
+    "trend": 113.7,
+    "day_of_year": 289
+  },
+  {
+    "date": "2024-10-16",
+    "value": 94.01,
+    "seasonal_component": -19.22,
+    "trend": 113.23,
+    "day_of_year": 290
+  },
+  {
+    "date": "2024-10-17",
+    "value": 91.25,
+    "seasonal_component": -19.12,
+    "trend": 110.37,
+    "day_of_year": 291
+  },
+  {
+    "date": "2024-10-18",
+    "value": 99.81,
+    "seasonal_component": -19.02,
+    "trend": 118.83,
+    "day_of_year": 292
+  },
+  {
+    "date": "2024-10-19",
+    "value": 95.01,
+    "seasonal_component": -18.91,
+    "trend": 113.92,
+    "day_of_year": 293
+  },
+  {
+    "date": "2024-10-20",
+    "value": 100.47,
+    "seasonal_component": -18.8,
+    "trend": 119.27,
+    "day_of_year": 294
+  },
+  {
+    "date": "2024-10-21",
+    "value": 93.71,
+    "seasonal_component": -18.68,
+    "trend": 112.38,
+    "day_of_year": 295
+  },
+  {
+    "date": "2024-10-22",
+    "value": 95.76,
+    "seasonal_component": -18.55,
+    "trend": 114.31,
+    "day_of_year": 296
+  },
+  {
+    "date": "2024-10-23",
+    "value": 100.34,
+    "seasonal_component": -18.42,
+    "trend": 118.76,
+    "day_of_year": 297
+  },
+  {
+    "date": "2024-10-24",
+    "value": 94.92,
+    "seasonal_component": -18.28,
+    "trend": 113.2,
+    "day_of_year": 298
+  },
+  {
+    "date": "2024-10-25",
+    "value": 92.46,
+    "seasonal_component": -18.14,
+    "trend": 110.6,
+    "day_of_year": 299
+  },
+  {
+    "date": "2024-10-26",
+    "value": 99.42,
+    "seasonal_component": -17.99,
+    "trend": 117.41,
+    "day_of_year": 300
+  },
+  {
+    "date": "2024-10-27",
+    "value": 97.99,
+    "seasonal_component": -17.84,
+    "trend": 115.83,
+    "day_of_year": 301
+  },
+  {
+    "date": "2024-10-28",
+    "value": 92.54,
+    "seasonal_component": -17.68,
+    "trend": 110.23,
+    "day_of_year": 302
+  },
+  {
+    "date": "2024-10-29",
+    "value": 96.48,
+    "seasonal_component": -17.52,
+    "trend": 113.99,
+    "day_of_year": 303
+  },
+  {
+    "date": "2024-10-30",
+    "value": 98.7,
+    "seasonal_component": -17.35,
+    "trend": 116.05,
+    "day_of_year": 304
+  },
+  {
+    "date": "2024-10-31",
+    "value": 98.1,
+    "seasonal_component": -17.18,
+    "trend": 115.28,
+    "day_of_year": 305
+  },
+  {
+    "date": "2024-11-01",
+    "value": 99.36,
+    "seasonal_component": -17,
+    "trend": 116.36,
+    "day_of_year": 306
+  },
+  {
+    "date": "2024-11-02",
+    "value": 100.58,
+    "seasonal_component": -16.81,
+    "trend": 117.39,
+    "day_of_year": 307
+  },
+  {
+    "date": "2024-11-04",
+    "value": 97.55,
+    "seasonal_component": -16.62,
+    "trend": 114.17,
+    "day_of_year": 308
+  },
+  {
+    "date": "2024-11-05",
+    "value": 102.27,
+    "seasonal_component": -16.43,
+    "trend": 118.7,
+    "day_of_year": 309
+  },
+  {
+    "date": "2024-11-06",
+    "value": 96.51,
+    "seasonal_component": -16.23,
+    "trend": 112.74,
+    "day_of_year": 310
+  },
+  {
+    "date": "2024-11-07",
+    "value": 103.54,
+    "seasonal_component": -16.03,
+    "trend": 119.57,
+    "day_of_year": 311
+  },
+  {
+    "date": "2024-11-08",
+    "value": 103.38,
+    "seasonal_component": -15.82,
+    "trend": 119.2,
+    "day_of_year": 312
+  },
+  {
+    "date": "2024-11-09",
+    "value": 97.11,
+    "seasonal_component": -15.61,
+    "trend": 112.71,
+    "day_of_year": 313
+  },
+  {
+    "date": "2024-11-10",
+    "value": 101.61,
+    "seasonal_component": -15.39,
+    "trend": 117,
+    "day_of_year": 314
+  },
+  {
+    "date": "2024-11-11",
+    "value": 104.59,
+    "seasonal_component": -15.17,
+    "trend": 119.76,
+    "day_of_year": 315
+  },
+  {
+    "date": "2024-11-12",
+    "value": 102.78,
+    "seasonal_component": -14.94,
+    "trend": 117.72,
+    "day_of_year": 316
+  },
+  {
+    "date": "2024-11-13",
+    "value": 96.98,
+    "seasonal_component": -14.71,
+    "trend": 111.69,
+    "day_of_year": 317
+  },
+  {
+    "date": "2024-11-14",
+    "value": 100.73,
+    "seasonal_component": -14.47,
+    "trend": 115.2,
+    "day_of_year": 318
+  },
+  {
+    "date": "2024-11-15",
+    "value": 103.62,
+    "seasonal_component": -14.23,
+    "trend": 117.86,
+    "day_of_year": 319
+  },
+  {
+    "date": "2024-11-16",
+    "value": 103.42,
+    "seasonal_component": -13.99,
+    "trend": 117.4,
+    "day_of_year": 320
+  },
+  {
+    "date": "2024-11-17",
+    "value": 97.95,
+    "seasonal_component": -13.74,
+    "trend": 111.69,
+    "day_of_year": 321
+  },
+  {
+    "date": "2024-11-18",
+    "value": 102.48,
+    "seasonal_component": -13.49,
+    "trend": 115.97,
+    "day_of_year": 322
+  },
+  {
+    "date": "2024-11-19",
+    "value": 99.98,
+    "seasonal_component": -13.23,
+    "trend": 113.21,
+    "day_of_year": 323
+  },
+  {
+    "date": "2024-11-20",
+    "value": 103.5,
+    "seasonal_component": -12.97,
+    "trend": 116.48,
+    "day_of_year": 324
+  },
+  {
+    "date": "2024-11-21",
+    "value": 107.35,
+    "seasonal_component": -12.71,
+    "trend": 120.06,
+    "day_of_year": 325
+  },
+  {
+    "date": "2024-11-22",
+    "value": 103.41,
+    "seasonal_component": -12.44,
+    "trend": 115.85,
+    "day_of_year": 326
+  },
+  {
+    "date": "2024-11-23",
+    "value": 100.2,
+    "seasonal_component": -12.17,
+    "trend": 112.37,
+    "day_of_year": 327
+  },
+  {
+    "date": "2024-11-24",
+    "value": 109,
+    "seasonal_component": -11.89,
+    "trend": 120.89,
+    "day_of_year": 328
+  },
+  {
+    "date": "2024-11-25",
+    "value": 108.62,
+    "seasonal_component": -11.62,
+    "trend": 120.23,
+    "day_of_year": 329
+  },
+  {
+    "date": "2024-11-26",
+    "value": 104.45,
+    "seasonal_component": -11.33,
+    "trend": 115.78,
+    "day_of_year": 330
+  },
+  {
+    "date": "2024-11-27",
+    "value": 104.86,
+    "seasonal_component": -11.05,
+    "trend": 115.9,
+    "day_of_year": 331
+  },
+  {
+    "date": "2024-11-28",
+    "value": 107,
+    "seasonal_component": -10.76,
+    "trend": 117.76,
+    "day_of_year": 332
+  },
+  {
+    "date": "2024-11-29",
+    "value": 106.69,
+    "seasonal_component": -10.47,
+    "trend": 117.16,
+    "day_of_year": 333
+  },
+  {
+    "date": "2024-11-30",
+    "value": 108.41,
+    "seasonal_component": -10.17,
+    "trend": 118.59,
+    "day_of_year": 334
+  },
+  {
+    "date": "2024-12-01",
+    "value": 110.57,
+    "seasonal_component": -9.88,
+    "trend": 120.45,
+    "day_of_year": 335
+  },
+  {
+    "date": "2024-12-02",
+    "value": 102.63,
+    "seasonal_component": -9.57,
+    "trend": 112.21,
+    "day_of_year": 336
+  },
+  {
+    "date": "2024-12-03",
+    "value": 103.97,
+    "seasonal_component": -9.27,
+    "trend": 113.24,
+    "day_of_year": 337
+  },
+  {
+    "date": "2024-12-04",
+    "value": 103.12,
+    "seasonal_component": -8.96,
+    "trend": 112.08,
+    "day_of_year": 338
+  },
+  {
+    "date": "2024-12-05",
+    "value": 103.97,
+    "seasonal_component": -8.66,
+    "trend": 112.62,
+    "day_of_year": 339
+  },
+  {
+    "date": "2024-12-06",
+    "value": 111.52,
+    "seasonal_component": -8.34,
+    "trend": 119.86,
+    "day_of_year": 340
+  },
+  {
+    "date": "2024-12-07",
+    "value": 109.42,
+    "seasonal_component": -8.03,
+    "trend": 117.45,
+    "day_of_year": 341
+  },
+  {
+    "date": "2024-12-08",
+    "value": 113.56,
+    "seasonal_component": -7.71,
+    "trend": 121.27,
+    "day_of_year": 342
+  },
+  {
+    "date": "2024-12-09",
+    "value": 108.45,
+    "seasonal_component": -7.39,
+    "trend": 115.84,
+    "day_of_year": 343
+  },
+  {
+    "date": "2024-12-10",
+    "value": 107.1,
+    "seasonal_component": -7.07,
+    "trend": 114.18,
+    "day_of_year": 344
+  },
+  {
+    "date": "2024-12-11",
+    "value": 114.66,
+    "seasonal_component": -6.75,
+    "trend": 121.41,
+    "day_of_year": 345
+  },
+  {
+    "date": "2024-12-12",
+    "value": 113.39,
+    "seasonal_component": -6.43,
+    "trend": 119.82,
+    "day_of_year": 346
+  },
+  {
+    "date": "2024-12-13",
+    "value": 112.6,
+    "seasonal_component": -6.1,
+    "trend": 118.7,
+    "day_of_year": 347
+  },
+  {
+    "date": "2024-12-14",
+    "value": 113.62,
+    "seasonal_component": -5.77,
+    "trend": 119.39,
+    "day_of_year": 348
+  },
+  {
+    "date": "2024-12-15",
+    "value": 109.97,
+    "seasonal_component": -5.44,
+    "trend": 115.41,
+    "day_of_year": 349
+  },
+  {
+    "date": "2024-12-16",
+    "value": 111.36,
+    "seasonal_component": -5.11,
+    "trend": 116.47,
+    "day_of_year": 350
+  },
+  {
+    "date": "2024-12-17",
+    "value": 110.95,
+    "seasonal_component": -4.77,
+    "trend": 115.73,
+    "day_of_year": 351
+  },
+  {
+    "date": "2024-12-18",
+    "value": 114.73,
+    "seasonal_component": -4.44,
+    "trend": 119.17,
+    "day_of_year": 352
+  },
+  {
+    "date": "2024-12-19",
+    "value": 116.88,
+    "seasonal_component": -4.1,
+    "trend": 120.99,
+    "day_of_year": 353
+  },
+  {
+    "date": "2024-12-20",
+    "value": 117.19,
+    "seasonal_component": -3.76,
+    "trend": 120.95,
+    "day_of_year": 354
+  },
+  {
+    "date": "2024-12-21",
+    "value": 116.88,
+    "seasonal_component": -3.43,
+    "trend": 120.3,
+    "day_of_year": 355
+  },
+  {
+    "date": "2024-12-22",
+    "value": 113.01,
+    "seasonal_component": -3.09,
+    "trend": 116.1,
+    "day_of_year": 356
+  },
+  {
+    "date": "2024-12-23",
+    "value": 116.29,
+    "seasonal_component": -2.75,
+    "trend": 119.03,
+    "day_of_year": 357
+  },
+  {
+    "date": "2024-12-24",
+    "value": 117.1,
+    "seasonal_component": -2.4,
+    "trend": 119.5,
+    "day_of_year": 358
+  },
+  {
+    "date": "2024-12-25",
+    "value": 111.43,
+    "seasonal_component": -2.06,
+    "trend": 113.49,
+    "day_of_year": 359
+  },
+  {
+    "date": "2024-12-26",
+    "value": 118.33,
+    "seasonal_component": -1.72,
+    "trend": 120.05,
+    "day_of_year": 360
+  },
+  {
+    "date": "2024-12-27",
+    "value": 117.94,
+    "seasonal_component": -1.38,
+    "trend": 119.32,
+    "day_of_year": 361
+  },
+  {
+    "date": "2024-12-28",
+    "value": 116,
+    "seasonal_component": -1.03,
+    "trend": 117.03,
+    "day_of_year": 362
+  },
+  {
+    "date": "2024-12-29",
+    "value": 121.74,
+    "seasonal_component": -0.69,
+    "trend": 122.43,
+    "day_of_year": 363
+  },
+  {
+    "date": "2024-12-30",
+    "value": 113.07,
+    "seasonal_component": -0.34,
+    "trend": 113.42,
+    "day_of_year": 364
+  },
+  {
+    "date": "2024-12-31",
+    "value": 122.75,
+    "seasonal_component": 0,
+    "trend": 122.75,
+    "day_of_year": 365
+  },
+  {
+    "date": "2025-01-01",
+    "value": 121.75,
+    "seasonal_component": 0.34,
+    "trend": 121.4,
+    "day_of_year": 366
+  },
+  {
+    "date": "2025-01-02",
+    "value": 114.74,
+    "seasonal_component": 0.34,
+    "trend": 114.39,
+    "day_of_year": 1
+  },
+  {
+    "date": "2025-01-03",
+    "value": 121.81,
+    "seasonal_component": 0.69,
+    "trend": 121.12,
+    "day_of_year": 2
+  },
+  {
+    "date": "2025-01-04",
+    "value": 115.71,
+    "seasonal_component": 1.03,
+    "trend": 114.68,
+    "day_of_year": 3
+  },
+  {
+    "date": "2025-01-05",
+    "value": 115.19,
+    "seasonal_component": 1.38,
+    "trend": 113.81,
+    "day_of_year": 4
+  },
+  {
+    "date": "2025-01-06",
+    "value": 120.21,
+    "seasonal_component": 1.72,
+    "trend": 118.49,
+    "day_of_year": 5
+  },
+  {
+    "date": "2025-01-07",
+    "value": 122.05,
+    "seasonal_component": 2.06,
+    "trend": 119.99,
+    "day_of_year": 6
+  },
+  {
+    "date": "2025-01-08",
+    "value": 120.99,
+    "seasonal_component": 2.4,
+    "trend": 118.58,
+    "day_of_year": 7
+  },
+  {
+    "date": "2025-01-09",
+    "value": 120.96,
+    "seasonal_component": 2.75,
+    "trend": 118.21,
+    "day_of_year": 8
+  },
+  {
+    "date": "2025-01-10",
+    "value": 124.53,
+    "seasonal_component": 3.09,
+    "trend": 121.45,
+    "day_of_year": 9
+  },
+  {
+    "date": "2025-01-11",
+    "value": 117.95,
+    "seasonal_component": 3.43,
+    "trend": 114.53,
+    "day_of_year": 10
+  },
+  {
+    "date": "2025-01-12",
+    "value": 120.55,
+    "seasonal_component": 3.76,
+    "trend": 116.78,
+    "day_of_year": 11
+  },
+  {
+    "date": "2025-01-13",
+    "value": 127.14,
+    "seasonal_component": 4.1,
+    "trend": 123.04,
+    "day_of_year": 12
+  },
+  {
+    "date": "2025-01-14",
+    "value": 121.15,
+    "seasonal_component": 4.44,
+    "trend": 116.71,
+    "day_of_year": 13
+  },
+  {
+    "date": "2025-01-15",
+    "value": 124.86,
+    "seasonal_component": 4.77,
+    "trend": 120.09,
+    "day_of_year": 14
+  },
+  {
+    "date": "2025-01-16",
+    "value": 122.69,
+    "seasonal_component": 5.11,
+    "trend": 117.58,
+    "day_of_year": 15
+  },
+  {
+    "date": "2025-01-17",
+    "value": 127.11,
+    "seasonal_component": 5.44,
+    "trend": 121.67,
+    "day_of_year": 16
+  },
+  {
+    "date": "2025-01-18",
+    "value": 123.03,
+    "seasonal_component": 5.77,
+    "trend": 117.26,
+    "day_of_year": 17
+  },
+  {
+    "date": "2025-01-19",
+    "value": 120.54,
+    "seasonal_component": 6.1,
+    "trend": 114.44,
+    "day_of_year": 18
+  },
+  {
+    "date": "2025-01-20",
+    "value": 124.32,
+    "seasonal_component": 6.43,
+    "trend": 117.89,
+    "day_of_year": 19
+  },
+  {
+    "date": "2025-01-21",
+    "value": 128,
+    "seasonal_component": 6.75,
+    "trend": 121.25,
+    "day_of_year": 20
+  },
+  {
+    "date": "2025-01-22",
+    "value": 122.73,
+    "seasonal_component": 7.07,
+    "trend": 115.66,
+    "day_of_year": 21
+  },
+  {
+    "date": "2025-01-23",
+    "value": 122.22,
+    "seasonal_component": 7.39,
+    "trend": 114.83,
+    "day_of_year": 22
+  },
+  {
+    "date": "2025-01-24",
+    "value": 122.19,
+    "seasonal_component": 7.71,
+    "trend": 114.47,
+    "day_of_year": 23
+  },
+  {
+    "date": "2025-01-25",
+    "value": 129.38,
+    "seasonal_component": 8.03,
+    "trend": 121.35,
+    "day_of_year": 24
+  },
+  {
+    "date": "2025-01-26",
+    "value": 130.69,
+    "seasonal_component": 8.34,
+    "trend": 122.34,
+    "day_of_year": 25
+  },
+  {
+    "date": "2025-01-27",
+    "value": 126.13,
+    "seasonal_component": 8.66,
+    "trend": 117.47,
+    "day_of_year": 26
+  },
+  {
+    "date": "2025-01-28",
+    "value": 131.38,
+    "seasonal_component": 8.96,
+    "trend": 122.41,
+    "day_of_year": 27
+  },
+  {
+    "date": "2025-01-29",
+    "value": 128.09,
+    "seasonal_component": 9.27,
+    "trend": 118.82,
+    "day_of_year": 28
+  },
+  {
+    "date": "2025-01-30",
+    "value": 132.88,
+    "seasonal_component": 9.57,
+    "trend": 123.31,
+    "day_of_year": 29
+  },
+  {
+    "date": "2025-01-31",
+    "value": 128.99,
+    "seasonal_component": 9.88,
+    "trend": 119.12,
+    "day_of_year": 30
+  },
+  {
+    "date": "2025-02-01",
+    "value": 126.51,
+    "seasonal_component": 10.17,
+    "trend": 116.34,
+    "day_of_year": 31
+  },
+  {
+    "date": "2025-02-02",
+    "value": 125.43,
+    "seasonal_component": 10.47,
+    "trend": 114.96,
+    "day_of_year": 32
+  },
+  {
+    "date": "2025-02-03",
+    "value": 127.57,
+    "seasonal_component": 10.76,
+    "trend": 116.81,
+    "day_of_year": 33
+  }
+]

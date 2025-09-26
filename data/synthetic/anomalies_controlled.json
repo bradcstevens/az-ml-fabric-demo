@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2024-01-01T10:30:00Z",
+    "equipment_id": "PUMP_001",
+    "anomaly_type": "TEMPERATURE_SPIKE",
+    "severity": "HIGH",
+    "is_anomaly": true,
+    "value": 95.8,
+    "threshold": 80.0,
+    "description": "Temperature exceeded normal operating range"
+  },
+  {
+    "timestamp": "2024-01-01T11:45:00Z",
+    "equipment_id": "MOTOR_002",
+    "anomaly_type": "VIBRATION_ANOMALY",
+    "severity": "MEDIUM",
+    "is_anomaly": true,
+    "value": 4.2,
+    "threshold": 3.0,
+    "description": "Abnormal vibration pattern detected"
+  },
+  {
+    "timestamp": "2024-01-01T14:20:00Z",
+    "equipment_id": "COMPRESSOR_003",
+    "anomaly_type": "PRESSURE_DROP",
+    "severity": "LOW",
+    "is_anomaly": true,
+    "value": 15.2,
+    "threshold": 20.0,
+    "description": "Pressure below expected operating range"
+  },
+  {
+    "timestamp": "2024-01-01T15:00:00Z",
+    "equipment_id": "PUMP_001",
+    "anomaly_type": "NORMAL_OPERATION",
+    "severity": "NONE",
+    "is_anomaly": false,
+    "value": 76.5,
+    "threshold": 80.0,
+    "description": "Equipment operating within normal parameters"
+  },
+  {
+    "timestamp": "2024-01-01T16:30:00Z",
+    "equipment_id": "MOTOR_002",
+    "anomaly_type": "EFFICIENCY_DROP",
+    "severity": "HIGH",
+    "is_anomaly": true,
+    "value": 0.65,
+    "threshold": 0.85,
+    "description": "Motor efficiency significantly below normal"
+  }
+]

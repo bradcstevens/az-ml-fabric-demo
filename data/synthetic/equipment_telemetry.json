@@ -1,0 +1,52 @@
+[
+  {
+    "equipment_id": "PUMP_001",
+    "timestamp": "2024-01-01T08:00:00Z",
+    "temperature": 75.2,
+    "vibration": 2.1,
+    "pressure": 12.5,
+    "flow_rate": 150.8,
+    "status": "NORMAL",
+    "runtime_hours": 1250
+  },
+  {
+    "equipment_id": "PUMP_001",
+    "timestamp": "2024-01-01T08:15:00Z",
+    "temperature": 76.1,
+    "vibration": 2.3,
+    "pressure": 12.7,
+    "flow_rate": 152.1,
+    "status": "NORMAL",
+    "runtime_hours": 1250.25
+  },
+  {
+    "equipment_id": "MOTOR_002",
+    "timestamp": "2024-01-01T08:00:00Z",
+    "temperature": 68.5,
+    "vibration": 1.8,
+    "pressure": 8.2,
+    "flow_rate": 0,
+    "status": "NORMAL",
+    "runtime_hours": 2100
+  },
+  {
+    "equipment_id": "MOTOR_002",
+    "timestamp": "2024-01-01T08:15:00Z",
+    "temperature": 69.2,
+    "vibration": 2.0,
+    "pressure": 8.1,
+    "flow_rate": 0,
+    "status": "WARNING",
+    "runtime_hours": 2100.25
+  },
+  {
+    "equipment_id": "COMPRESSOR_003",
+    "timestamp": "2024-01-01T08:00:00Z",
+    "temperature": 82.3,
+    "vibration": 3.2,
+    "pressure": 25.6,
+    "flow_rate": 200.5,
+    "status": "NORMAL",
+    "runtime_hours": 890
+  }
+]

@@ -1,0 +1,11 @@
+# Task ID: 2
+# Title: Develop ML Model Pipeline
+# Status: done
+# Dependencies: 1
+# Priority: high
+# Description: Create machine learning models for predictive analytics using Azure ML with Random Forest and Neural Networks
+# Details:
+Develop and train ML models in Azure ML using Random Forest and Neural Network algorithms. Implement model registry and versioning. Establish MLOps practices including model lifecycle management and automated training pipelines.
+
+# Test Strategy:
+Test model training pipelines with synthetic data. Validate model performance metrics and registry functionality.

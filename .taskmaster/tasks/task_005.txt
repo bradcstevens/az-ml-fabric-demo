@@ -1,0 +1,11 @@
+# Task ID: 5
+# Title: Deploy Real-Time Scoring Endpoint
+# Status: done
+# Dependencies: 2
+# Priority: high
+# Description: Set up Azure ML Online Endpoint for real-time prediction API with sub-1-second latency
+# Details:
+Set up Azure ML Online Endpoint for real-time API predictions. Target latency under 1 second and throughput of 1000 requests/minute. Implement proper authentication, monitoring, and auto-scaling capabilities for enterprise-grade performance.
+
+# Test Strategy:
+Load test endpoint to validate latency and throughput requirements. Test authentication and monitoring systems.

@@ -1,0 +1,11 @@
+# Task ID: 1
+# Title: Set up Data Foundation
+# Status: done
+# Dependencies: None
+# Priority: high
+# Description: Establish Fabric workspace, OneLake storage, and synthetic data generation for the predictive analytics MVP
+# Details:
+Set up Microsoft Fabric workspace and OneLake. Generate synthetic operational data including manufacturing datasets, time-series data with seasonal patterns, equipment telemetry, and controlled anomalies for model validation. Implement data ingestion pipelines and create initial data preparation notebooks.
+
+# Test Strategy:
+Validate synthetic data quality and statistical properties. Test data ingestion pipelines with sample datasets.

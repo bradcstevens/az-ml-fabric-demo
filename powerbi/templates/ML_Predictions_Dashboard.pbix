@@ -1,0 +1,12 @@
+# Power BI Template Placeholder
+# This file represents where the ML_Predictions_Dashboard.pbix template would be stored
+#
+# Power BI .pbix files are binary and cannot be created as text files
+# This placeholder indicates the expected location and naming convention
+#
+# To create the actual dashboard:
+# 1. Open Power BI Desktop
+# 2. Connect to OneLake data source
+# 3. Import the data model configuration from data_model.json
+# 4. Build visualizations as specified in the documentation
+# 5. Save as ML_Predictions_Dashboard.pbix in this location

@@ -1,0 +1,35 @@
+{
+  "name": "az-ml-fabric-demo",
+  "version": "1.0.0",
+  "description": "Azure ML and Microsoft Fabric integration demo with Azure Developer CLI",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:infrastructure": "vitest tests/infrastructure.test.js",
+    "build": "echo 'Build process for Azure resources'",
+    "deploy:dev": "azd up --environment dev",
+    "deploy:staging": "azd up --environment staging",
+    "deploy:prod": "azd up --environment prod"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "vitest": "^1.0.0"
+  },
+  "keywords": [
+    "azure",
+    "machine-learning",
+    "fabric",
+    "infrastructure",
+    "bicep",
+    "azd"
+  ],
+  "author": "Infrastructure Implementation Agent",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.7.0"
+  }
+}

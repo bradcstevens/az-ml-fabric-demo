@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2024-01-01T08:00:00Z",
+    "production_line": "LINE_A",
+    "output_quantity": 1250,
+    "defect_rate": 0.02,
+    "machine_efficiency": 0.94,
+    "operator_id": "OP001",
+    "shift": "DAY"
+  },
+  {
+    "timestamp": "2024-01-01T09:00:00Z",
+    "production_line": "LINE_A",
+    "output_quantity": 1180,
+    "defect_rate": 0.03,
+    "machine_efficiency": 0.89,
+    "operator_id": "OP001",
+    "shift": "DAY"
+  },
+  {
+    "timestamp": "2024-01-01T10:00:00Z",
+    "production_line": "LINE_B",
+    "output_quantity": 980,
+    "defect_rate": 0.01,
+    "machine_efficiency": 0.96,
+    "operator_id": "OP002",
+    "shift": "DAY"
+  },
+  {
+    "timestamp": "2024-01-01T11:00:00Z",
+    "production_line": "LINE_B",
+    "output_quantity": 1020,
+    "defect_rate": 0.015,
+    "machine_efficiency": 0.93,
+    "operator_id": "OP002",
+    "shift": "DAY"
+  },
+  {
+    "timestamp": "2024-01-01T12:00:00Z",
+    "production_line": "LINE_C",
+    "output_quantity": 1350,
+    "defect_rate": 0.008,
+    "machine_efficiency": 0.97,
+    "operator_id": "OP003",
+    "shift": "DAY"
+  }
+]

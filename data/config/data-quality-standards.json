@@ -1,0 +1,66 @@
+{
+  "manufacturing": {
+    "output_quantity": {
+      "min": 800,
+      "max": 1500,
+      "expected_mean": 1100,
+      "max_std_dev": 200
+    },
+    "defect_rate": {
+      "min": 0,
+      "max": 0.05,
+      "expected_mean": 0.02,
+      "max_std_dev": 0.015
+    },
+    "machine_efficiency": {
+      "min": 0.8,
+      "max": 1.0,
+      "expected_mean": 0.92,
+      "max_std_dev": 0.1
+    },
+    "required_fields": ["timestamp", "production_line", "output_quantity", "defect_rate", "machine_efficiency"],
+    "min_records": 5
+  },
+  "timeseries": {
+    "value": {
+      "min": 50,
+      "max": 200,
+      "seasonal_variation": true
+    },
+    "seasonal_component": {
+      "min": -25,
+      "max": 25,
+      "must_have_variation": true
+    },
+    "required_fields": ["date", "value", "seasonal_component"],
+    "min_records": 365,
+    "must_span_full_year": true
+  },
+  "telemetry": {
+    "temperature": {
+      "min": 20,
+      "max": 100,
+      "normal_range": [60, 85]
+    },
+    "vibration": {
+      "min": 0,
+      "max": 10,
+      "normal_range": [1, 4]
+    },
+    "pressure": {
+      "min": 0,
+      "max": 50,
+      "normal_range": [5, 30]
+    },
+    "required_fields": ["equipment_id", "timestamp", "temperature", "vibration", "status"],
+    "min_equipment_types": 2,
+    "min_records": 3
+  },
+  "anomalies": {
+    "severity_levels": ["NONE", "LOW", "MEDIUM", "HIGH"],
+    "anomaly_types": ["TEMPERATURE_SPIKE", "VIBRATION_ANOMALY", "PRESSURE_DROP", "EFFICIENCY_DROP", "NORMAL_OPERATION"],
+    "required_fields": ["timestamp", "anomaly_type", "severity", "is_anomaly"],
+    "min_anomalies": 3,
+    "min_normal": 1
+  }
+}

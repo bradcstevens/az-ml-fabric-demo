@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash:*)",
+      "Bash(npm test)",
+      "Bash(node:*)",
+      "Bash(task-master:*)",
+      "Bash(npx:*)",
+      "Bash(npm install:*)",
+      "Bash(printf \"y\\nn\\n\")",
+      "mcp__task-master-ai__get_tasks",
+      "mcp__task-master-ai__parse_prd",
+      "Bash(cp:*)",
+      "Bash(yes)",
+      "mcp__task-master-ai__add_task",
+      "Bash(mcp__task-master__get_task:*)",
+      "Bash(npm run test:infrastructure:*)",
+      "Bash(chmod:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run build:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(mcp__task-master__set_task_status:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run test:unit:*)",
+      "Bash(npm run test:integration:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run lint)",
+      "Bash(azd:*)",
+      "Bash(find:*)",
+      "mcp__task-master-ai__set_task_status",
+      "Bash(npm run:*)",
+      "mcp__task-master-ai__next_task",
+      "mcp__task-master-ai__expand_task",
+      "mcp__task-master-ai__add_subtask",
+      "Bash(mkdir:*)",
+      "mcp__task-master-ai__get_task",
+      "Bash(./scripts/test-azd-solution.sh:*)",
+      "Bash(./scripts/validate-solution-offline.sh:*)",
+      "Bash(test:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "task-master-ai"
+  ]
+}

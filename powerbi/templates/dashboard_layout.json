@@ -1,0 +1,145 @@
+{
+  "dashboardLayout": {
+    "name": "ML Predictions Dashboard",
+    "description": "Interactive dashboard for monitoring Azure ML batch predictions",
+    "pages": [
+      {
+        "name": "Overview",
+        "description": "High-level summary of prediction performance",
+        "visualizations": [
+          {
+            "id": "predictions_summary_card",
+            "type": "Card",
+            "title": "Total Predictions Today",
+            "position": {"x": 0, "y": 0, "width": 3, "height": 2},
+            "dataBinding": {
+              "measure": "Total Predictions",
+              "filter": "Predictions[Prediction Date] = TODAY()"
+            }
+          },
+          {
+            "id": "avg_confidence_card",
+            "type": "Card",
+            "title": "Average Confidence Score",
+            "position": {"x": 3, "y": 0, "width": 3, "height": 2},
+            "dataBinding": {
+              "measure": "Average Confidence"
+            }
+          },
+          {
+            "id": "model_accuracy_card",
+            "type": "Card",
+            "title": "Model Accuracy",
+            "position": {"x": 6, "y": 0, "width": 3, "height": 2},
+            "dataBinding": {
+              "measure": "Prediction Accuracy"
+            }
+          },
+          {
+            "id": "predictions_timeline",
+            "type": "Line Chart",
+            "title": "Predictions Over Time",
+            "position": {"x": 0, "y": 2, "width": 9, "height": 4},
+            "dataBinding": {
+              "xAxis": "Predictions[timestamp]",
+              "yAxis": "Total Predictions",
+              "legend": "Predictions[model_version]"
+            }
+          },
+          {
+            "id": "confidence_distribution",
+            "type": "Donut Chart",
+            "title": "Confidence Score Distribution",
+            "position": {"x": 0, "y": 6, "width": 4, "height": 3},
+            "dataBinding": {
+              "category": "Predictions[Confidence Category]",
+              "values": "Total Predictions"
+            }
+          },
+          {
+            "id": "feature_importance",
+            "type": "Horizontal Bar Chart",
+            "title": "Feature Importance",
+            "position": {"x": 4, "y": 6, "width": 5, "height": 3},
+            "dataBinding": {
+              "category": "FeatureImportance[feature_name]",
+              "values": "FeatureImportance[importance_score]"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Detailed Analysis",
+        "description": "Detailed breakdown and drill-down capabilities",
+        "visualizations": [
+          {
+            "id": "predictions_table",
+            "type": "Table",
+            "title": "Recent Predictions",
+            "position": {"x": 0, "y": 0, "width": 9, "height": 4},
+            "dataBinding": {
+              "columns": [
+                "Predictions[prediction_id]",
+                "Predictions[timestamp]",
+                "Predictions[prediction_value]",
+                "Predictions[confidence_score]",
+                "Predictions[model_version]"
+              ]
+            }
+          },
+          {
+            "id": "model_performance_trend",
+            "type": "Line Chart",
+            "title": "Model Performance Trends",
+            "position": {"x": 0, "y": 4, "width": 9, "height": 3},
+            "dataBinding": {
+              "xAxis": "ModelMetrics[timestamp]",
+              "yAxis": "ModelMetrics[metric_value]",
+              "legend": "ModelMetrics[metric_name]"
+            }
+          },
+          {
+            "id": "prediction_heatmap",
+            "type": "Matrix",
+            "title": "Prediction Volume by Hour/Day",
+            "position": {"x": 0, "y": 7, "width": 9, "height": 2},
+            "dataBinding": {
+              "rows": "HOUR(Predictions[timestamp])",
+              "columns": "Predictions[Prediction Date]",
+              "values": "Total Predictions"
+            }
+          }
+        ]
+      }
+    ],
+    "filters": [
+      {
+        "name": "Date Range",
+        "type": "Date Range Slicer",
+        "column": "Predictions[timestamp]",
+        "defaultValue": "Last 30 Days"
+      },
+      {
+        "name": "Model Version",
+        "type": "Dropdown",
+        "column": "Predictions[model_version]",
+        "allowMultiSelect": true
+      },
+      {
+        "name": "Confidence Threshold",
+        "type": "Numeric Range",
+        "column": "Predictions[confidence_score]",
+        "defaultMin": 0.0,
+        "defaultMax": 1.0
+      }
+    ],
+    "theme": {
+      "colorPalette": [
+        "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
+        "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"
+      ],
+      "backgroundColor": "#ffffff",
+      "fontFamily": "Segoe UI"
+    }
+  }
+}

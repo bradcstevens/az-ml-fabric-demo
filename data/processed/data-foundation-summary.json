@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-09-18T03:04:29.498Z",
+  "summary": {
+    "totalFiles": 4,
+    "totalRecords": 415,
+    "qualityScore": "EXCELLENT"
+  },
+  "datasets": {
+    "manufacturing": {
+      "records": 5,
+      "status": "READY",
+      "features": [
+        "production_line",
+        "output_quantity",
+        "defect_rate",
+        "machine_efficiency"
+      ]
+    },
+    "timeseries": {
+      "records": 400,
+      "status": "READY",
+      "features": [
+        "seasonal_component",
+        "trend",
+        "value"
+      ],
+      "seasonal_pattern": "DETECTED"
+    },
+    "telemetry": {
+      "records": 5,
+      "status": "READY",
+      "equipment_count": 3,
+      "features": [
+        "temperature",
+        "vibration",
+        "pressure",
+        "status"
+      ]
+    },
+    "anomalies": {
+      "records": 5,
+      "status": "READY",
+      "anomaly_ratio": "80.0%",
+      "features": [
+        "anomaly_type",
+        "severity",
+        "is_anomaly"
+      ]
+    }
+  },
+  "nextSteps": [
+    "Data ingestion pipelines can be activated",
+    "Machine learning model training can begin",
+    "Real-time monitoring can be enabled",
+    "Fabric workspace deployment is ready"
+  ]
+}

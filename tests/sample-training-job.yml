@@ -1,0 +1,87 @@
+# Sample ML Training Job for Testing
+# This job configuration is used by the azd testing suite to validate
+# Azure ML workspace functionality
+
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+type: command
+
+display_name: "Test Training Job - azd validation"
+description: "Simple training job to test Azure ML workspace functionality"
+
+experiment_name: "azd-validation"
+
+code: ../src
+environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu:latest
+
+command: >-
+  python -c "
+  import sklearn
+  import pandas as pd
+  import numpy as np
+  import joblib
+  import os
+  from sklearn.ensemble import RandomForestRegressor
+  from sklearn.model_selection import train_test_split
+  from sklearn.metrics import mean_squared_error
+
+  print('=== AZD Validation Training Job ===')
+  print(f'Scikit-learn version: {sklearn.__version__}')
+  print(f'Pandas version: {pd.__version__}')
+  print(f'NumPy version: {np.__version__}')
+
+  # Generate synthetic data for testing
+  print('Generating synthetic training data...')
+  np.random.seed(42)
+  n_samples = 1000
+  X = np.random.randn(n_samples, 4)
+  y = X[:, 0] + 2 * X[:, 1] - X[:, 2] + 0.5 * X[:, 3] + np.random.randn(n_samples) * 0.1
+
+  # Split data
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+  print(f'Training samples: {len(X_train)}, Test samples: {len(X_test)}')
+
+  # Train model
+  print('Training Random Forest model...')
+  model = RandomForestRegressor(n_estimators=10, random_state=42)
+  model.fit(X_train, y_train)
+
+  # Evaluate
+  train_score = model.score(X_train, y_train)
+  test_score = model.score(X_test, y_test)
+  y_pred = model.predict(X_test)
+  mse = mean_squared_error(y_test, y_pred)
+
+  print(f'Training R² score: {train_score:.4f}')
+  print(f'Test R² score: {test_score:.4f}')
+  print(f'Test MSE: {mse:.4f}')
+
+  # Save model for validation
+  model_path = 'outputs/test_model.pkl' if 'outputs' in os.listdir('.') else 'test_model.pkl'
+  joblib.dump(model, model_path)
+  print(f'Model saved to: {model_path}')
+
+  # Validation checks
+  assert train_score > 0.8, f'Training score too low: {train_score}'
+  assert test_score > 0.7, f'Test score too low: {test_score}'
+  assert mse < 1.0, f'MSE too high: {mse}'
+
+  print('✅ All validation checks passed!')
+  print('=== Training Job Completed Successfully ===')
+  "
+
+compute: cpu-cluster
+
+resources:
+  instance_count: 1
+
+inputs: {}
+
+outputs:
+  model_output:
+    type: uri_folder
+    path: azureml://datastores/workspaceblobstore/paths/outputs/azd-validation
+
+tags:
+  purpose: "azd-testing"
+  type: "validation"
+  framework: "sklearn"

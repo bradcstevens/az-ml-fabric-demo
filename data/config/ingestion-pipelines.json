@@ -1,0 +1,137 @@
+{
+  "pipelines": [
+    {
+      "name": "manufacturing-data-ingestion",
+      "description": "Ingests manufacturing production data from synthetic sources",
+      "source": {
+        "type": "file",
+        "path": "./data/synthetic/manufacturing_data.json",
+        "format": "json"
+      },
+      "destination": {
+        "type": "onelake",
+        "workspace": "fabric-analytics-workspace",
+        "lakehouse": "manufacturing-lakehouse",
+        "table": "production_data"
+      },
+      "schedule": {
+        "frequency": "hourly",
+        "start_time": "2024-01-01T00:00:00Z"
+      },
+      "transformations": [
+        {
+          "type": "timestamp_conversion",
+          "field": "timestamp",
+          "format": "ISO8601"
+        },
+        {
+          "type": "data_validation",
+          "rules": ["non_null_check", "range_validation"]
+        }
+      ]
+    },
+    {
+      "name": "timeseries-seasonal-ingestion",
+      "description": "Ingests time-series data with seasonal patterns",
+      "source": {
+        "type": "file",
+        "path": "./data/synthetic/timeseries_seasonal.json",
+        "format": "json"
+      },
+      "destination": {
+        "type": "onelake",
+        "workspace": "fabric-analytics-workspace",
+        "lakehouse": "timeseries-lakehouse",
+        "table": "seasonal_data"
+      },
+      "schedule": {
+        "frequency": "daily",
+        "start_time": "2024-01-01T02:00:00Z"
+      },
+      "transformations": [
+        {
+          "type": "date_parsing",
+          "field": "date",
+          "format": "YYYY-MM-DD"
+        },
+        {
+          "type": "seasonal_decomposition",
+          "fields": ["value", "seasonal_component"]
+        }
+      ]
+    },
+    {
+      "name": "equipment-telemetry-ingestion",
+      "description": "Real-time ingestion of equipment telemetry data",
+      "source": {
+        "type": "file",
+        "path": "./data/synthetic/equipment_telemetry.json",
+        "format": "json"
+      },
+      "destination": {
+        "type": "onelake",
+        "workspace": "fabric-analytics-workspace",
+        "lakehouse": "telemetry-lakehouse",
+        "table": "equipment_metrics"
+      },
+      "schedule": {
+        "frequency": "real-time",
+        "batch_size": 100
+      },
+      "transformations": [
+        {
+          "type": "anomaly_detection",
+          "fields": ["temperature", "vibration", "pressure"]
+        },
+        {
+          "type": "status_enrichment",
+          "field": "status"
+        }
+      ]
+    },
+    {
+      "name": "anomalies-controlled-ingestion",
+      "description": "Ingests controlled anomaly data for model validation",
+      "source": {
+        "type": "file",
+        "path": "./data/synthetic/anomalies_controlled.json",
+        "format": "json"
+      },
+      "destination": {
+        "type": "onelake",
+        "workspace": "fabric-analytics-workspace",
+        "lakehouse": "validation-lakehouse",
+        "table": "anomaly_labels"
+      },
+      "schedule": {
+        "frequency": "batch",
+        "start_time": "2024-01-01T04:00:00Z"
+      },
+      "transformations": [
+        {
+          "type": "label_validation",
+          "field": "is_anomaly"
+        },
+        {
+          "type": "severity_mapping",
+          "field": "severity"
+        }
+      ]
+    }
+  ],
+  "global_settings": {
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_strategy": "exponential"
+    },
+    "error_handling": {
+      "on_failure": "log_and_continue",
+      "dead_letter_queue": "error-processing-queue"
+    },
+    "monitoring": {
+      "metrics_enabled": true,
+      "alerting_enabled": true,
+      "log_level": "INFO"
+    }
+  }
+}

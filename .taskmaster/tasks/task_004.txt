@@ -1,0 +1,11 @@
+# Task ID: 4
+# Title: Implement Batch Scoring Pipeline
+# Status: done
+# Dependencies: 2
+# Priority: high
+# Description: Deploy automated batch scoring pipeline using Azure ML Pipelines with nightly execution schedule
+# Details:
+Deploy batch scoring pipelines using Azure ML Pipelines with scheduled execution. Target completion within 30-minute SLA. Store batch predictions in OneLake for reporting and analytics. Implement monitoring and alerting for pipeline execution.
+
+# Test Strategy:
+Test batch scoring pipeline execution and validate SLA compliance. Verify predictions storage in OneLake.

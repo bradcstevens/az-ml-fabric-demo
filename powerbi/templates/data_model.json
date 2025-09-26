@@ -1,0 +1,113 @@
+{
+  "dataModel": {
+    "name": "ML_Predictions_Data_Model",
+    "description": "Data model for Azure ML predictions consumed from OneLake",
+    "dataSources": [
+      {
+        "name": "OneLake_Predictions",
+        "type": "OneLake",
+        "connectionString": "${ONELAKE_CONNECTION_STRING}",
+        "tables": [
+          "batch_predictions",
+          "model_metrics",
+          "feature_importance"
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Predictions",
+        "source": "OneLake_Predictions.batch_predictions",
+        "columns": [
+          {"name": "prediction_id", "type": "Text", "isPrimaryKey": true},
+          {"name": "timestamp", "type": "DateTime"},
+          {"name": "prediction_value", "type": "Decimal"},
+          {"name": "confidence_score", "type": "Decimal"},
+          {"name": "model_version", "type": "Text"},
+          {"name": "input_features", "type": "Text"}
+        ]
+      },
+      {
+        "name": "ModelMetrics",
+        "source": "OneLake_Predictions.model_metrics",
+        "columns": [
+          {"name": "metric_id", "type": "Text", "isPrimaryKey": true},
+          {"name": "model_version", "type": "Text"},
+          {"name": "metric_name", "type": "Text"},
+          {"name": "metric_value", "type": "Decimal"},
+          {"name": "timestamp", "type": "DateTime"}
+        ]
+      },
+      {
+        "name": "FeatureImportance",
+        "source": "OneLake_Predictions.feature_importance",
+        "columns": [
+          {"name": "feature_id", "type": "Text", "isPrimaryKey": true},
+          {"name": "feature_name", "type": "Text"},
+          {"name": "importance_score", "type": "Decimal"},
+          {"name": "model_version", "type": "Text"}
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "fromTable": "Predictions",
+        "fromColumn": "model_version",
+        "toTable": "ModelMetrics",
+        "toColumn": "model_version",
+        "cardinality": "ManyToOne"
+      },
+      {
+        "fromTable": "FeatureImportance",
+        "fromColumn": "model_version",
+        "toTable": "ModelMetrics",
+        "toColumn": "model_version",
+        "cardinality": "ManyToOne"
+      }
+    ],
+    "measures": [
+      {
+        "name": "Total Predictions",
+        "table": "Predictions",
+        "expression": "COUNT(Predictions[prediction_id])"
+      },
+      {
+        "name": "Average Confidence",
+        "table": "Predictions",
+        "expression": "AVERAGE(Predictions[confidence_score])"
+      },
+      {
+        "name": "Prediction Accuracy",
+        "table": "ModelMetrics",
+        "expression": "CALCULATE(AVERAGE(ModelMetrics[metric_value]), ModelMetrics[metric_name] = \"accuracy\")"
+      },
+      {
+        "name": "Latest Prediction Time",
+        "table": "Predictions",
+        "expression": "MAX(Predictions[timestamp])"
+      }
+    ],
+    "calculatedColumns": [
+      {
+        "name": "Confidence Category",
+        "table": "Predictions",
+        "expression": "IF(Predictions[confidence_score] >= 0.8, \"High\", IF(Predictions[confidence_score] >= 0.6, \"Medium\", \"Low\"))"
+      },
+      {
+        "name": "Prediction Date",
+        "table": "Predictions",
+        "expression": "DATE(YEAR(Predictions[timestamp]), MONTH(Predictions[timestamp]), DAY(Predictions[timestamp]))"
+      }
+    ]
+  },
+  "refreshSettings": {
+    "scheduleRefresh": true,
+    "refreshFrequency": "Daily",
+    "refreshTime": "06:00",
+    "incrementalRefresh": {
+      "enabled": true,
+      "archiveData": "2 years",
+      "incrementalData": "7 days"
+    }
+  }
+}

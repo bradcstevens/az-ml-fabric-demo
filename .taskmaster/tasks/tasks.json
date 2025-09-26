@@ -1,0 +1,252 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Set up Data Foundation",
+        "description": "Establish Fabric workspace, OneLake storage, and synthetic data generation for the predictive analytics MVP",
+        "details": "Set up Microsoft Fabric workspace and OneLake. Generate synthetic operational data including manufacturing datasets, time-series data with seasonal patterns, equipment telemetry, and controlled anomalies for model validation. Implement data ingestion pipelines and create initial data preparation notebooks.",
+        "testStrategy": "Validate synthetic data quality and statistical properties. Test data ingestion pipelines with sample datasets.",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Develop ML Model Pipeline",
+        "description": "Create machine learning models for predictive analytics using Azure ML with Random Forest and Neural Networks",
+        "details": "Develop and train ML models in Azure ML using Random Forest and Neural Network algorithms. Implement model registry and versioning. Establish MLOps practices including model lifecycle management and automated training pipelines.",
+        "testStrategy": "Test model training pipelines with synthetic data. Validate model performance metrics and registry functionality.",
+        "status": "done",
+        "dependencies": [
+          1
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Create Azure Developer CLI Infrastructure",
+        "description": "Implement Infrastructure as Code using Azure Developer CLI (azd) with Bicep templates for one-command deployment",
+        "details": "Initialize azd project structure with azure.yaml configuration. Create modular Bicep templates for Azure ML workspace, Microsoft Fabric, compute resources, monitoring, and security. Develop deployment scripts with multi-environment support (dev/staging/prod). Create comprehensive deployment documentation.",
+        "testStrategy": "Test complete deployment with 'azd up' from clean Azure subscription. Validate multi-environment configurations and infrastructure provisioning.",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Implement Batch Scoring Pipeline",
+        "description": "Deploy automated batch scoring pipeline using Azure ML Pipelines with nightly execution schedule",
+        "details": "Deploy batch scoring pipelines using Azure ML Pipelines with scheduled execution. Target completion within 30-minute SLA. Store batch predictions in OneLake for reporting and analytics. Implement monitoring and alerting for pipeline execution.",
+        "testStrategy": "Test batch scoring pipeline execution and validate SLA compliance. Verify predictions storage in OneLake.",
+        "status": "done",
+        "dependencies": [
+          2
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Deploy Real-Time Scoring Endpoint",
+        "description": "Set up Azure ML Online Endpoint for real-time prediction API with sub-1-second latency",
+        "details": "Set up Azure ML Online Endpoint for real-time API predictions. Target latency under 1 second and throughput of 1000 requests/minute. Implement proper authentication, monitoring, and auto-scaling capabilities for enterprise-grade performance.",
+        "testStrategy": "Load test endpoint to validate latency and throughput requirements. Test authentication and monitoring systems.",
+        "status": "done",
+        "dependencies": [
+          2
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Create Power BI Reporting Dashboard",
+        "description": "Build Power BI dashboards for business intelligence consuming batch predictions from OneLake",
+        "details": "Create Power BI Premium dashboards for interactive visualization of predictions. Connect to OneLake batch predictions data. Implement real-time data visualization capabilities and operational reporting for business intelligence.",
+        "testStrategy": "Test dashboard connectivity to OneLake data. Validate real-time updates and interactive features.",
+        "status": "done",
+        "dependencies": [
+          4
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up OneLake data connection",
+            "description": "Configure Power BI to connect to OneLake batch predictions data source",
+            "details": "Establish secure connection to Azure OneLake containing batch prediction results from ML model",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 2,
+            "title": "Create dashboard data model",
+            "description": "Design and implement Power BI data model for prediction analytics",
+            "details": "Create relationships, measures, and calculated columns for effective visualization of ML predictions",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 3,
+            "title": "Build interactive visualizations",
+            "description": "Create charts, graphs, and interactive elements for business intelligence reporting",
+            "details": "Implement prediction trend analysis, performance metrics, and drill-down capabilities",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 4,
+            "title": "Implement real-time data refresh",
+            "description": "Configure automatic data refresh and real-time updates for dashboard",
+            "details": "Set up scheduled refresh from OneLake and implement real-time streaming if applicable",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          },
+          {
+            "id": 5,
+            "title": "Deploy and test dashboard",
+            "description": "Deploy Power BI dashboard to workspace and validate functionality",
+            "details": "Test data connectivity, visualization performance, and user access permissions",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 6
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Implement Legacy System Integration",
+        "description": "Enable legacy application integration with real-time scoring API without dependency on lookup tables",
+        "details": "Integrate with legacy operational applications via REST API without relying on lookup tables. Ensure seamless integration without requiring code changes in legacy systems. Implement proper authentication and error handling for production use.",
+        "testStrategy": "Test legacy application integration scenarios. Validate API compatibility and error handling.",
+        "status": "done",
+        "dependencies": [
+          5
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design API adapter architecture",
+            "description": "Design integration adapter to connect legacy systems with Azure ML real-time API",
+            "details": "Create abstraction layer that allows legacy systems to consume ML predictions without requiring code changes",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          },
+          {
+            "id": 2,
+            "title": "Implement REST API gateway",
+            "description": "Build REST API gateway that translates legacy requests to Azure ML API calls",
+            "details": "Implement HTTP gateway with request/response transformation, authentication handling, and error mapping",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          },
+          {
+            "id": 3,
+            "title": "Create authentication bridge",
+            "description": "Implement authentication bridge for legacy system credentials to Azure ML endpoints",
+            "details": "Handle legacy authentication methods and map to Azure ML API key/token authentication securely",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          },
+          {
+            "id": 4,
+            "title": "Build error handling and monitoring",
+            "description": "Implement comprehensive error handling and monitoring for production reliability",
+            "details": "Add circuit breakers, retry logic, health checks, and logging for enterprise-grade reliability",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          },
+          {
+            "id": 5,
+            "title": "Create integration testing suite",
+            "description": "Develop comprehensive testing suite for legacy system integration scenarios",
+            "details": "Test API compatibility, authentication flows, error handling, and performance under various legacy system configurations",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 7
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Implement Monitoring and Observability",
+        "description": "Set up comprehensive monitoring using Azure Monitor and Application Insights for system observability",
+        "details": "Implement Azure Monitor for infrastructure monitoring and Application Insights for application performance. Set up comprehensive logging, alerting, and observability for all system components. Monitor SLA compliance, performance metrics, and system health.",
+        "testStrategy": "Test monitoring alerts and dashboards. Validate performance tracking and SLA monitoring capabilities.",
+        "status": "done",
+        "dependencies": [
+          4,
+          5
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up Azure Monitor workspace",
+            "description": "Configure Azure Monitor Log Analytics workspace for centralized logging and metrics",
+            "details": "Create Log Analytics workspace with proper retention policies and configure data sources for all system components",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 2,
+            "title": "Implement Application Insights monitoring",
+            "description": "Configure Application Insights for application performance monitoring and telemetry",
+            "details": "Set up Application Insights with custom telemetry, performance counters, and dependency tracking for ML services",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 3,
+            "title": "Create monitoring dashboards",
+            "description": "Build comprehensive dashboards for system health, performance metrics, and SLA tracking",
+            "details": "Create Azure dashboards showing ML pipeline performance, API latency, error rates, and business metrics",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 4,
+            "title": "Configure alerting and notifications",
+            "description": "Set up intelligent alerting rules and notification channels for proactive issue detection",
+            "details": "Configure alert rules for SLA violations, error rate spikes, performance degradation, and system failures with proper escalation",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          },
+          {
+            "id": 5,
+            "title": "Implement SLA and performance tracking",
+            "description": "Set up automated SLA compliance monitoring and performance baseline tracking",
+            "details": "Track SLA metrics for ML pipeline execution time, API response latency, and system availability with automated reporting",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 8
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "created": "2025-09-17T19:29:00.000Z",
+      "lastModified": "2025-09-17T19:29:00.000Z",
+      "description": "Tasks for master context",
+      "updated": "2025-09-26T21:16:14.937Z"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+# Core FastAPI and ASGI server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+
+# HTTP client
+httpx==0.25.2
+
+# Authentication and security
+cryptography==41.0.7
+PyJWT==2.8.0
+
+# Azure SDK
+azure-identity==1.15.0
+azure-keyvault-secrets==4.7.0
+
+# Circuit breaker and resilience
+circuitbreaker==1.4.0
+
+# Monitoring and observability
+opencensus-ext-azure==1.1.11
+opencensus-ext-requests==0.8.0
+opencensus-ext-httpx==0.1.1
+psutil==5.9.6
+
+# Configuration management
+PyYAML==6.0.1
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+httpx[test]==0.25.2
+
+# Development tools
+black==23.11.0
+isort==5.12.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Production WSGI server
+gunicorn==21.2.0
+
+# Optional dependencies for enhanced features
+redis==5.0.1  # For distributed caching
+aiofiles==23.2.1  # For async file operations
+prometheus-client==0.19.0  # For Prometheus metrics
+structlog==23.2.0  # For structured logging
