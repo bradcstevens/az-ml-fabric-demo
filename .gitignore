@@ -24,3 +24,13 @@ node_modules/
 
 # OS specific
 .DS_Store
+
+# AI Assistant Configuration & Documentation
+.claude-collective/
+.claude/
+.taskmaster/
+AGENT.md
+AGENTS.md
+CLAUDE.md
+.mcp.json
+opencode.json
