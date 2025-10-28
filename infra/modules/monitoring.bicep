@@ -60,7 +60,6 @@ resource actionGroup 'Microsoft.Insights/actionGroups@2022-06-01' = {
     webhookReceivers: []
     azureAppPushReceivers: []
     itsmReceivers: []
-    azureAutomationRunbookReceivers: []
     voiceReceivers: []
     logicAppReceivers: []
     azureFunctionReceivers: []
@@ -69,6 +68,8 @@ resource actionGroup 'Microsoft.Insights/actionGroups@2022-06-01' = {
 }
 
 // ML Model Performance Alert
+// Note: Custom metrics alerts commented out until ML models are deployed
+/*
 resource modelPerformanceAlert 'Microsoft.Insights/metricAlerts@2018-03-01' = {
   name: '${environmentName}-model-performance'
   location: 'Global'
@@ -89,8 +90,9 @@ resource modelPerformanceAlert 'Microsoft.Insights/metricAlerts@2018-03-01' = {
           name: 'ModelAccuracy'
           metricName: 'Accuracy'
           operator: 'LessThan'
-          threshold: 0.8
+          threshold: 80
           timeAggregation: 'Average'
+          criterionType: 'StaticThresholdCriterion'
         }
       ]
     }
@@ -125,6 +127,7 @@ resource pipelineFailureAlert 'Microsoft.Insights/metricAlerts@2018-03-01' = {
           operator: 'GreaterThan'
           threshold: 0
           timeAggregation: 'Total'
+          criterionType: 'StaticThresholdCriterion'
         }
       ]
     }
@@ -135,6 +138,7 @@ resource pipelineFailureAlert 'Microsoft.Insights/metricAlerts@2018-03-01' = {
     ]
   }
 }
+*/
 
 // Outputs
 output logAnalyticsWorkspaceId string = logAnalytics.id

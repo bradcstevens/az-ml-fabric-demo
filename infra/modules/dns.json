@@ -1,0 +1,221 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.38.3.11034",
+      "templateHash": "12717598985408287553"
+    }
+  },
+  "parameters": {
+    "environmentName": {
+      "type": "string"
+    },
+    "vnetId": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "object",
+      "defaultValue": {}
+    }
+  },
+  "variables": {
+    "storageSuffix": "[environment().suffixes.storage]",
+    "keyVaultSuffix": "[format('vault{0}', environment().suffixes.keyvaultDns)]",
+    "acrSuffix": "azurecr.io",
+    "azureMLSuffix": "api.azureml.ms"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/privateDnsZones",
+      "apiVersion": "2020-06-01",
+      "name": "[format('privatelink.blob.{0}', variables('storageSuffix'))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones",
+      "apiVersion": "2020-06-01",
+      "name": "[format('privatelink.file.{0}', variables('storageSuffix'))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones",
+      "apiVersion": "2020-06-01",
+      "name": "[format('privatelink.{0}', variables('keyVaultSuffix'))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones",
+      "apiVersion": "2020-06-01",
+      "name": "[format('privatelink.{0}', variables('acrSuffix'))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones",
+      "apiVersion": "2020-06-01",
+      "name": "[format('privatelink.{0}', variables('azureMLSuffix'))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+      "apiVersion": "2020-06-01",
+      "name": "[format('{0}/{1}', format('privatelink.blob.{0}', variables('storageSuffix')), format('{0}-blob-link', parameters('environmentName')))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {
+        "registrationEnabled": false,
+        "virtualNetwork": {
+          "id": "[parameters('vnetId')]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.blob.{0}', variables('storageSuffix')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+      "apiVersion": "2020-06-01",
+      "name": "[format('{0}/{1}', format('privatelink.file.{0}', variables('storageSuffix')), format('{0}-file-link', parameters('environmentName')))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {
+        "registrationEnabled": false,
+        "virtualNetwork": {
+          "id": "[parameters('vnetId')]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.file.{0}', variables('storageSuffix')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+      "apiVersion": "2020-06-01",
+      "name": "[format('{0}/{1}', format('privatelink.{0}', variables('keyVaultSuffix')), format('{0}-keyvault-link', parameters('environmentName')))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {
+        "registrationEnabled": false,
+        "virtualNetwork": {
+          "id": "[parameters('vnetId')]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.{0}', variables('keyVaultSuffix')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+      "apiVersion": "2020-06-01",
+      "name": "[format('{0}/{1}', format('privatelink.{0}', variables('acrSuffix')), format('{0}-acr-link', parameters('environmentName')))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {
+        "registrationEnabled": false,
+        "virtualNetwork": {
+          "id": "[parameters('vnetId')]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.{0}', variables('acrSuffix')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+      "apiVersion": "2020-06-01",
+      "name": "[format('{0}/{1}', format('privatelink.{0}', variables('azureMLSuffix')), format('{0}-azureml-link', parameters('environmentName')))]",
+      "location": "global",
+      "tags": "[parameters('tags')]",
+      "properties": {
+        "registrationEnabled": false,
+        "virtualNetwork": {
+          "id": "[parameters('vnetId')]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.{0}', variables('azureMLSuffix')))]"
+      ]
+    }
+  ],
+  "outputs": {
+    "blobDnsZoneName": {
+      "type": "string",
+      "value": "[format('privatelink.blob.{0}', variables('storageSuffix'))]"
+    },
+    "fileDnsZoneName": {
+      "type": "string",
+      "value": "[format('privatelink.file.{0}', variables('storageSuffix'))]"
+    },
+    "keyVaultDnsZoneName": {
+      "type": "string",
+      "value": "[format('privatelink.{0}', variables('keyVaultSuffix'))]"
+    },
+    "acrDnsZoneName": {
+      "type": "string",
+      "value": "[format('privatelink.{0}', variables('acrSuffix'))]"
+    },
+    "azureMLDnsZoneName": {
+      "type": "string",
+      "value": "[format('privatelink.{0}', variables('azureMLSuffix'))]"
+    },
+    "blobVnetLinkId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones/virtualNetworkLinks', format('privatelink.blob.{0}', variables('storageSuffix')), format('{0}-blob-link', parameters('environmentName')))]"
+    },
+    "fileVnetLinkId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones/virtualNetworkLinks', format('privatelink.file.{0}', variables('storageSuffix')), format('{0}-file-link', parameters('environmentName')))]"
+    },
+    "keyVaultVnetLinkId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones/virtualNetworkLinks', format('privatelink.{0}', variables('keyVaultSuffix')), format('{0}-keyvault-link', parameters('environmentName')))]"
+    },
+    "acrVnetLinkId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones/virtualNetworkLinks', format('privatelink.{0}', variables('acrSuffix')), format('{0}-acr-link', parameters('environmentName')))]"
+    },
+    "azureMLVnetLinkId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones/virtualNetworkLinks', format('privatelink.{0}', variables('azureMLSuffix')), format('{0}-azureml-link', parameters('environmentName')))]"
+    },
+    "autoRegistrationEnabled": {
+      "type": "bool",
+      "value": false
+    },
+    "dnsZonesLocation": {
+      "type": "string",
+      "value": "global"
+    },
+    "blobDnsZoneId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.blob.{0}', variables('storageSuffix')))]"
+    },
+    "fileDnsZoneId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.file.{0}', variables('storageSuffix')))]"
+    },
+    "keyVaultDnsZoneId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.{0}', variables('keyVaultSuffix')))]"
+    },
+    "acrDnsZoneId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.{0}', variables('acrSuffix')))]"
+    },
+    "azureMLDnsZoneId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/privateDnsZones', format('privatelink.{0}', variables('azureMLSuffix')))]"
+    }
+  }
+}

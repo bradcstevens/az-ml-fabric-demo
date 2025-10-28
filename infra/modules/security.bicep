@@ -7,9 +7,9 @@ param tags object = {}
 
 // Variables
 var abbrs = loadJsonContent('../abbreviations.json')
-var keyVaultName = '${abbrs.keyVaultVaults}${environmentName}-${resourceToken}'
-var storageAccountName = '${abbrs.storageStorageAccounts}${take('st${environmentName}${resourceToken}', 24)}'
-var containerRegistryName = '${abbrs.containerRegistryRegistries}${environmentName}${resourceToken}'
+var keyVaultName = take('${abbrs.keyVaultVaults}${replace(environmentName, '-', '')}${resourceToken}', 24)
+var storageAccountName = length('st${replace(environmentName, '-', '')}${resourceToken}') >= 3 ? take('st${replace(environmentName, '-', '')}${resourceToken}', 24) : take('st${replace(environmentName, '-', '')}${resourceToken}demo', 24)
+var containerRegistryName = length('cr${replace(environmentName, '-', '')}${resourceToken}') >= 5 ? take('cr${replace(environmentName, '-', '')}${resourceToken}', 50) : 'cr${replace(environmentName, '-', '')}${resourceToken}demo'
 
 // Key Vault
 resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' = {

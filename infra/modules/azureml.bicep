@@ -6,11 +6,14 @@ param keyVaultName string
 param applicationInsightsName string
 param containerRegistryName string
 param storageAccountName string
+param vnetId string
+param mlWorkspaceSubnetId string
+param computeSubnetId string
 param tags object = {}
 
 // Variables
 var abbrs = loadJsonContent('../abbreviations.json')
-var workspaceName = '${abbrs.machineLearningServicesWorkspaces}${environmentName}-${resourceToken}'
+var workspaceName = take('${abbrs.machineLearningServicesWorkspaces}${replace(environmentName, '-', '')}${resourceToken}', 33)
 
 // Azure Machine Learning Workspace
 resource mlWorkspace 'Microsoft.MachineLearningServices/workspaces@2023-04-01' = {
@@ -33,6 +36,9 @@ resource mlWorkspace 'Microsoft.MachineLearningServices/workspaces@2023-04-01' =
 }
 
 // Compute Instance for development
+// Note: Compute instances require a user objectId to be assigned
+// Uncomment and provide valid objectId when needed
+/*
 resource computeInstance 'Microsoft.MachineLearningServices/workspaces/computes@2023-04-01' = {
   parent: mlWorkspace
   name: 'dev-instance'
@@ -48,15 +54,16 @@ resource computeInstance 'Microsoft.MachineLearningServices/workspaces/computes@
       }
       personalComputeInstanceSettings: {
         assignedUser: {
-          objectId: ''
+          objectId: 'REPLACE_WITH_USER_OBJECT_ID'
           tenantId: tenant().tenantId
         }
       }
     }
   }
 }
+*/
 
-// Compute Cluster for training
+// Compute Cluster for training - with private networking
 resource computeCluster 'Microsoft.MachineLearningServices/workspaces/computes@2023-04-01' = {
   parent: mlWorkspace
   name: 'training-cluster'
@@ -71,14 +78,19 @@ resource computeCluster 'Microsoft.MachineLearningServices/workspaces/computes@2
         maxNodeCount: 4
         nodeIdleTimeBeforeScaleDown: 'PT2M'
       }
-      enableNodePublicIp: false
-      isolatedNetwork: false
+      enableNodePublicIp: true
+      subnet: {
+        id: computeSubnetId
+      }
       osType: 'Linux'
     }
   }
 }
 
 // Inference Cluster for real-time endpoints
+// Note: AKS compute is being deprecated in favor of managed endpoints
+// Uncomment if you need AKS compute specifically
+/*
 resource inferenceCluster 'Microsoft.MachineLearningServices/workspaces/computes@2023-04-01' = {
   parent: mlWorkspace
   name: 'inference-cluster'
@@ -96,11 +108,12 @@ resource inferenceCluster 'Microsoft.MachineLearningServices/workspaces/computes
     }
   }
 }
+*/
 
 // Outputs
 output workspaceName string = mlWorkspace.name
 output workspaceId string = mlWorkspace.id
 output workspaceUrl string = 'https://ml.azure.com/workspaces/${mlWorkspace.id}'
-output computeInstanceName string = computeInstance.name
+// output computeInstanceName string = computeInstance.name // Commented out since compute instance is disabled
 output computeClusterName string = computeCluster.name
-output inferenceClusterName string = inferenceCluster.name
+// output inferenceClusterName string = inferenceCluster.name // Commented out since inference cluster is disabled

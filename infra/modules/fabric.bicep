@@ -2,14 +2,18 @@
 param environmentName string
 param location string
 param resourceToken string
+param principalId string = ''
+param fabricAdminEmail string = ''
 param tags object = {}
 
 // Variables
 var abbrs = loadJsonContent('../abbreviations.json')
-var fabricWorkspaceName = '${abbrs.fabricWorkspaces}${environmentName}-${resourceToken}'
-var fabricCapacityName = '${abbrs.fabricCapacities}${environmentName}-${resourceToken}'
+var fabricWorkspaceName = length(replace('${abbrs.fabricWorkspaces}${environmentName}${resourceToken}', '-', '')) >= 3 ? take(replace('${abbrs.fabricWorkspaces}${environmentName}${resourceToken}', '-', ''), 63) : '${replace('${abbrs.fabricWorkspaces}${environmentName}${resourceToken}', '-', '')}demo'
 
 // Microsoft Fabric Capacity
+// Note: Microsoft.Fabric/capacities API may not be available in all regions
+// Uncomment when Fabric capacity is available in your region
+/*
 resource fabricCapacity 'Microsoft.Fabric/capacities@2023-11-01' = {
   name: fabricCapacityName
   location: location
@@ -24,6 +28,7 @@ resource fabricCapacity 'Microsoft.Fabric/capacities@2023-11-01' = {
     }
   }
 }
+*/
 
 // Microsoft Fabric Workspace
 resource fabricWorkspace 'Microsoft.PowerBIDedicated/capacities@2021-01-01' = {
@@ -36,7 +41,7 @@ resource fabricWorkspace 'Microsoft.PowerBIDedicated/capacities@2021-01-01' = {
   }
   properties: {
     administration: {
-      members: []
+      members: !empty(fabricAdminEmail) ? [fabricAdminEmail] : (!empty(principalId) ? [principalId] : ['brad.stevens@MngEnvMCAP786696.onmicrosoft.com'])
     }
     mode: 'Gen2'
   }
@@ -44,21 +49,20 @@ resource fabricWorkspace 'Microsoft.PowerBIDedicated/capacities@2021-01-01' = {
 
 // Data Factory for data integration (part of Fabric ecosystem)
 resource dataFactory 'Microsoft.DataFactory/factories@2018-06-01' = {
-  name: '${abbrs.dataFactoryFactories}${environmentName}-${resourceToken}'
+  name: '${abbrs.dataFactoryFactories}${replace(environmentName, '-', '')}${resourceToken}'
   location: location
   tags: tags
   identity: {
     type: 'SystemAssigned'
   }
   properties: {
-    globalConfigurations: {}
     publicNetworkAccess: 'Enabled'
   }
 }
 
 // Event Hub for real-time data streaming
 resource eventHubNamespace 'Microsoft.EventHub/namespaces@2022-10-01-preview' = {
-  name: '${abbrs.eventHubNamespaces}${environmentName}-${resourceToken}'
+  name: '${abbrs.eventHubNamespaces}${replace(environmentName, '-', '')}${resourceToken}'
   location: location
   tags: tags
   sku: {
@@ -89,7 +93,7 @@ resource eventHub 'Microsoft.EventHub/namespaces/eventhubs@2022-10-01-preview' =
 
 // Synapse Analytics workspace for big data processing
 resource synapseWorkspace 'Microsoft.Synapse/workspaces@2021-06-01' = {
-  name: '${abbrs.synapseWorkspaces}${environmentName}-${resourceToken}'
+  name: '${abbrs.synapseWorkspaces}${replace(environmentName, '-', '')}${resourceToken}'
   location: location
   tags: tags
   identity: {
@@ -97,7 +101,7 @@ resource synapseWorkspace 'Microsoft.Synapse/workspaces@2021-06-01' = {
   }
   properties: {
     defaultDataLakeStorage: {
-      accountUrl: 'https://fabricstorage${resourceToken}.dfs.core.windows.net'
+      accountUrl: 'https://st${replace(environmentName, '-', '')}${resourceToken}.dfs.${environment().suffixes.storage}'
       filesystem: 'fabricdata'
     }
     sqlAdministratorLogin: 'sqladmin'
@@ -112,7 +116,7 @@ resource synapseWorkspace 'Microsoft.Synapse/workspaces@2021-06-01' = {
 output workspaceName string = fabricWorkspace.name
 output workspaceId string = fabricWorkspace.id
 output workspaceUrl string = 'https://app.fabric.microsoft.com/workspaces/${fabricWorkspace.name}'
-output capacityName string = fabricCapacity.name
+// output capacityName string = fabricCapacity.name // Commented out since capacity is disabled
 output dataFactoryName string = dataFactory.name
 output eventHubNamespaceName string = eventHubNamespace.name
 output eventHubName string = eventHub.name

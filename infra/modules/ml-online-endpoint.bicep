@@ -129,11 +129,13 @@ resource endpointTraffic 'Microsoft.MachineLearningServices/workspaces/onlineEnd
 }
 
 // Diagnostic settings for monitoring
+// Note: Requires Log Analytics workspace ID parameter for proper configuration
+/*
 resource diagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
   name: '${endpointName}-diagnostics'
   scope: onlineEndpoint
   properties: {
-    workspaceId: mlWorkspace.id
+    workspaceId: 'REPLACE_WITH_LOG_ANALYTICS_WORKSPACE_ID'
     logs: [
       {
         categoryGroup: 'allLogs'
@@ -156,6 +158,7 @@ resource diagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' 
     ]
   }
 }
+*/
 
 // Outputs
 output endpointId string = onlineEndpoint.id
