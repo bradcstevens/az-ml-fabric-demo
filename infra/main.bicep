@@ -66,7 +66,16 @@ module security './modules/security.bicep' = {
     resourceToken: resourceToken
     principalId: principalId
     tags: tags
+    privateEndpointsSubnetId: network.outputs.privateEndpointsSubnetId
+    keyVaultDnsZoneId: dns.outputs.keyVaultDnsZoneId
+    acrDnsZoneId: dns.outputs.acrDnsZoneId
+    blobDnsZoneId: dns.outputs.blobDnsZoneId
+    fileDnsZoneId: dns.outputs.fileDnsZoneId
   }
+  dependsOn: [
+    network
+    dns
+  ]
 }
 
 // Monitoring Module

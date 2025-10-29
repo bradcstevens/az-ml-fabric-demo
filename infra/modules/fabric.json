@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.38.3.11034",
-      "templateHash": "15640327372436362439"
+      "templateHash": "5201966803976246953"
     }
   },
   "parameters": {
@@ -19,6 +19,10 @@
       "type": "string"
     },
     "principalId": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "fabricAdminEmail": {
       "type": "string",
       "defaultValue": ""
     },
@@ -179,7 +183,7 @@
       },
       "properties": {
         "administration": {
-          "members": "[if(not(empty(parameters('principalId'))), createArray(parameters('principalId')), createArray())]"
+          "members": "[if(not(empty(parameters('fabricAdminEmail'))), createArray(parameters('fabricAdminEmail')), if(not(empty(parameters('principalId'))), createArray(parameters('principalId')), createArray('brad.stevens@MngEnvMCAP786696.onmicrosoft.com')))]"
         },
         "mode": "Gen2"
       }
@@ -230,27 +234,6 @@
       "dependsOn": [
         "[resourceId('Microsoft.EventHub/namespaces', format('{0}{1}{2}', variables('abbrs').eventHubNamespaces, replace(parameters('environmentName'), '-', ''), parameters('resourceToken')))]"
       ]
-    },
-    {
-      "type": "Microsoft.Synapse/workspaces",
-      "apiVersion": "2021-06-01",
-      "name": "[format('{0}{1}{2}', variables('abbrs').synapseWorkspaces, replace(parameters('environmentName'), '-', ''), parameters('resourceToken'))]",
-      "location": "[parameters('location')]",
-      "tags": "[parameters('tags')]",
-      "identity": {
-        "type": "SystemAssigned"
-      },
-      "properties": {
-        "defaultDataLakeStorage": {
-          "accountUrl": "[format('https://st{0}{1}.dfs.{2}', replace(parameters('environmentName'), '-', ''), parameters('resourceToken'), environment().suffixes.storage)]",
-          "filesystem": "fabricdata"
-        },
-        "sqlAdministratorLogin": "sqladmin",
-        "sqlAdministratorLoginPassword": "TempPassword123!",
-        "managedResourceGroupName": "[format('rg-{0}-synapse-managed', parameters('environmentName'))]",
-        "publicNetworkAccess": "Enabled",
-        "trustedServiceBypassEnabled": true
-      }
     }
   ],
   "outputs": {
@@ -277,10 +260,6 @@
     "eventHubName": {
       "type": "string",
       "value": "ml-predictions"
-    },
-    "synapseWorkspaceName": {
-      "type": "string",
-      "value": "[format('{0}{1}{2}', variables('abbrs').synapseWorkspaces, replace(parameters('environmentName'), '-', ''), parameters('resourceToken'))]"
     }
   }
 }

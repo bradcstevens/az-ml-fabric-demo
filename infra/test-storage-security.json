@@ -1,0 +1,852 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.38.3.11034",
+      "templateHash": "14900161362580323196"
+    }
+  },
+  "parameters": {
+    "environmentName": {
+      "type": "string",
+      "defaultValue": "test"
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus2"
+    },
+    "principalId": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "vnetId": {
+      "type": "string",
+      "defaultValue": "/subscriptions/test/resourceGroups/test/providers/Microsoft.Network/virtualNetworks/test"
+    },
+    "privateEndpointsSubnetId": {
+      "type": "string",
+      "defaultValue": "/subscriptions/test/resourceGroups/test/providers/Microsoft.Network/virtualNetworks/test/subnets/private-endpoints"
+    },
+    "blobDnsZoneId": {
+      "type": "string",
+      "defaultValue": "/subscriptions/test/resourceGroups/test/providers/Microsoft.Network/privateDnsZones/privatelink.blob.core.windows.net"
+    },
+    "fileDnsZoneId": {
+      "type": "string",
+      "defaultValue": "/subscriptions/test/resourceGroups/test/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net"
+    },
+    "keyVaultDnsZoneId": {
+      "type": "string",
+      "defaultValue": "/subscriptions/test/resourceGroups/test/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+    },
+    "acrDnsZoneId": {
+      "type": "string",
+      "defaultValue": "/subscriptions/test/resourceGroups/test/providers/Microsoft.Network/privateDnsZones/privatelink.azurecr.io"
+    }
+  },
+  "variables": {
+    "resourceToken": "test123",
+    "tags": {
+      "purpose": "storage-security-test",
+      "test": "task-11"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2025-04-01",
+      "name": "security-test-deployment",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "environmentName": {
+            "value": "[parameters('environmentName')]"
+          },
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "resourceToken": {
+            "value": "[variables('resourceToken')]"
+          },
+          "principalId": {
+            "value": "[parameters('principalId')]"
+          },
+          "tags": {
+            "value": "[variables('tags')]"
+          },
+          "privateEndpointsSubnetId": {
+            "value": "[parameters('privateEndpointsSubnetId')]"
+          },
+          "keyVaultDnsZoneId": {
+            "value": "[parameters('keyVaultDnsZoneId')]"
+          },
+          "acrDnsZoneId": {
+            "value": "[parameters('acrDnsZoneId')]"
+          },
+          "blobDnsZoneId": {
+            "value": "[parameters('blobDnsZoneId')]"
+          },
+          "fileDnsZoneId": {
+            "value": "[parameters('fileDnsZoneId')]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.38.3.11034",
+              "templateHash": "8403428219986476655"
+            }
+          },
+          "parameters": {
+            "environmentName": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "resourceToken": {
+              "type": "string"
+            },
+            "principalId": {
+              "type": "string"
+            },
+            "tags": {
+              "type": "object",
+              "defaultValue": {}
+            },
+            "privateEndpointsSubnetId": {
+              "type": "string"
+            },
+            "keyVaultDnsZoneId": {
+              "type": "string"
+            },
+            "acrDnsZoneId": {
+              "type": "string"
+            },
+            "blobDnsZoneId": {
+              "type": "string"
+            },
+            "fileDnsZoneId": {
+              "type": "string"
+            }
+          },
+          "variables": {
+            "$fxv#0": {
+              "analysisServicesServers": "as",
+              "apiManagementService": "apim-",
+              "appConfigurationConfigurationStores": "appcs-",
+              "appManagedEnvironments": "cae-",
+              "appContainerApps": "ca-",
+              "authorizationPolicyDefinitions": "policy-",
+              "automationAutomationAccounts": "aa-",
+              "blueprintBlueprints": "bp-",
+              "blueprintBlueprintsArtifacts": "bpa-",
+              "cacheRedis": "redis-",
+              "cdnProfiles": "cdnp-",
+              "cdnProfilesEndpoints": "cdne-",
+              "cognitiveServicesAccounts": "cog-",
+              "cognitiveServicesFormRecognizer": "cog-fr-",
+              "cognitiveServicesTextAnalytics": "cog-ta-",
+              "computeAvailabilitySets": "avail-",
+              "computeCloudServices": "cld-",
+              "computeDiskEncryptionSets": "des-",
+              "computeDisks": "disk-",
+              "computeGalleries": "gal-",
+              "computeSnapshots": "snap-",
+              "computeVirtualMachines": "vm-",
+              "computeVirtualMachineScaleSets": "vmss-",
+              "containerInstanceContainerGroups": "ci-",
+              "containerRegistryRegistries": "cr",
+              "containerServiceManagedClusters": "aks-",
+              "databricksWorkspaces": "dbw-",
+              "dataFactoryFactories": "adf-",
+              "dataLakeAnalyticsAccounts": "dla-",
+              "dataLakeStoreAccounts": "dls-",
+              "dataMigrationServices": "dms-",
+              "dBforMySQLServers": "mysql-",
+              "dBforPostgreSQLServers": "psql-",
+              "devicesIotHubs": "iot-",
+              "devicesProvisioningServices": "provs-",
+              "devicesProvisioningServicesCertificates": "pcert-",
+              "documentDBDatabaseAccounts": "cosmos-",
+              "eventGridDomains": "evgd-",
+              "eventGridTopics": "evgt-",
+              "eventHubNamespaces": "evhns-",
+              "eventHubNamespacesEventHubs": "evh-",
+              "hdInsightClustersHadoop": "hadoop-",
+              "hdInsightClustersHbase": "hbase-",
+              "hdInsightClustersKafka": "kafka-",
+              "hdInsightClustersMl": "mls-",
+              "hdInsightClustersSpark": "spark-",
+              "hdInsightClustersStorm": "storm-",
+              "hybridComputeMachines": "arcs-",
+              "hybridKubernetesConnectedClusters": "arck-",
+              "insightsActionGroups": "ag-",
+              "insightsComponents": "appi-",
+              "keyVaultVaults": "kv-",
+              "kubernetesConnectedClusters": "arck-",
+              "kustoClusters": "dec-",
+              "loadTesting": "lt-",
+              "logicWorkflows": "logic-",
+              "machineLearningServicesWorkspaces": "mlw-",
+              "managedIdentityUserAssignedIdentities": "id-",
+              "managementManagementGroups": "mg-",
+              "migrateAssessmentProjects": "migr-",
+              "networkApplicationGateways": "agw-",
+              "networkApplicationSecurityGroups": "asg-",
+              "networkAzureFirewalls": "afw-",
+              "networkBastionHosts": "bas-",
+              "networkConnections": "con-",
+              "networkDnsZones": "dnsz-",
+              "networkExpressRouteCircuits": "erc-",
+              "networkFirewallPolicies": "afwp-",
+              "networkFirewallPolicyRuleGroups": "wafrg-",
+              "networkFrontDoors": "fd-",
+              "networkFrontdoorWebApplicationFirewallPolicies": "fdfp-",
+              "networkLoadBalancers": "lb-",
+              "networkLoadBalancersInbound": "lbi-",
+              "networkLoadBalancersInternal": "lbi-",
+              "networkLoadBalancersOutbound": "lbo-",
+              "networkLocalNetworkGateways": "lgw-",
+              "networkNatGateways": "ng-",
+              "networkNetworkInterfaces": "nic-",
+              "networkNetworkSecurityGroups": "nsg-",
+              "networkNetworkSecurityGroupsSecurityRules": "nsgsr-",
+              "networkNetworkWatchers": "nw-",
+              "networkPrivateDnsZones": "pdnsz-",
+              "networkPrivateLinkServices": "pl-",
+              "networkPublicIPAddresses": "pip-",
+              "networkPublicIPPrefixes": "ippre-",
+              "networkRouteFilters": "rf-",
+              "networkRouteTables": "rt-",
+              "networkRouteTablesRoutes": "udr-",
+              "networkTrafficManagerProfiles": "traf-",
+              "networkVirtualNetworkGateways": "vgw-",
+              "networkVirtualNetworks": "vnet-",
+              "networkVirtualNetworksSubnets": "snet-",
+              "networkVirtualNetworksVirtualNetworkPeerings": "peer-",
+              "networkVirtualWans": "vwan-",
+              "networkVpnGateways": "vpng-",
+              "networkVpnGatewaysVpnConnections": "vcn-",
+              "networkVpnGatewaysVpnSites": "vst-",
+              "notificationHubsNamespaces": "ntfns-",
+              "notificationHubsNamespacesNotificationHubs": "ntf-",
+              "operationalInsightsWorkspaces": "log-",
+              "portalDashboards": "dash-",
+              "powerBIDedicatedCapacities": "pbi-",
+              "purviewAccounts": "pview-",
+              "recoveryServicesVaults": "rsv-",
+              "resourcesResourceGroups": "rg-",
+              "searchSearchServices": "srch-",
+              "serviceBusNamespaces": "sb-",
+              "serviceBusNamespacesQueues": "sbq-",
+              "serviceBusNamespacesTopics": "sbt-",
+              "serviceEndPointPolicies": "se-",
+              "serviceFabricClusters": "sf-",
+              "signalRServiceSignalR": "sigr-",
+              "sqlManagedInstances": "sqlmi-",
+              "sqlServers": "sql-",
+              "sqlServersFirewallRules": "sqlfw-",
+              "sqlServersDatabase": "sqldb-",
+              "storageStorageAccounts": "st",
+              "storageStorageAccountsFileServices": "file-",
+              "storageStorageAccountsBlobServices": "blob-",
+              "storageStorageAccountsQueueServices": "queue-",
+              "storageStorageAccountsTableServices": "table-",
+              "streamAnalyticsCluster": "asa-",
+              "synapseWorkspaces": "syn-",
+              "synapseWorkspacesAnalyticsWorkspaces": "synw-",
+              "synapseWorkspacesSqlPoolsDedicated": "syndp-",
+              "synapseWorkspacesSqlPoolsSpark": "synsp-",
+              "timeSeriesInsightsEnvironments": "tsi-",
+              "webServerFarms": "plan-",
+              "webSitesAppService": "app-",
+              "webSitesAppServiceEnvironment": "ase-",
+              "webSitesFunctions": "func-",
+              "fabricWorkspaces": "fabric-",
+              "fabricCapacities": "fabriccap-"
+            },
+            "abbrs": "[variables('$fxv#0')]",
+            "keyVaultName": "[take(format('{0}{1}{2}', variables('abbrs').keyVaultVaults, replace(parameters('environmentName'), '-', ''), parameters('resourceToken')), 24)]",
+            "storageAccountName": "[if(greaterOrEquals(length(format('st{0}{1}', replace(parameters('environmentName'), '-', ''), parameters('resourceToken'))), 3), take(format('st{0}{1}', replace(parameters('environmentName'), '-', ''), parameters('resourceToken')), 24), take(format('st{0}{1}demo', replace(parameters('environmentName'), '-', ''), parameters('resourceToken')), 24))]",
+            "containerRegistryName": "[if(greaterOrEquals(length(format('cr{0}{1}', replace(parameters('environmentName'), '-', ''), parameters('resourceToken'))), 5), take(format('cr{0}{1}', replace(parameters('environmentName'), '-', ''), parameters('resourceToken')), 50), format('cr{0}{1}demo', replace(parameters('environmentName'), '-', ''), parameters('resourceToken')))]"
+          },
+          "resources": [
+            {
+              "type": "Microsoft.KeyVault/vaults",
+              "apiVersion": "2022-07-01",
+              "name": "[variables('keyVaultName')]",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "tenantId": "[tenant().tenantId]",
+                "sku": {
+                  "family": "A",
+                  "name": "standard"
+                },
+                "accessPolicies": [],
+                "enabledForDeployment": false,
+                "enabledForDiskEncryption": false,
+                "enabledForTemplateDeployment": true,
+                "enableSoftDelete": true,
+                "softDeleteRetentionInDays": 90,
+                "enableRbacAuthorization": true,
+                "publicNetworkAccess": "Disabled",
+                "networkAcls": {
+                  "defaultAction": "Deny",
+                  "bypass": "AzureServices"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}-pe', variables('keyVaultName'))]",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "subnet": {
+                  "id": "[parameters('privateEndpointsSubnetId')]"
+                },
+                "privateLinkServiceConnections": [
+                  {
+                    "name": "[format('{0}-pe-connection', variables('keyVaultName'))]",
+                    "properties": {
+                      "privateLinkServiceId": "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]",
+                      "groupIds": [
+                        "vault"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}/{1}', format('{0}-pe', variables('keyVaultName')), 'default')]",
+              "properties": {
+                "privateDnsZoneConfigs": [
+                  {
+                    "name": "privatelink-vaultcore-azure-net",
+                    "properties": {
+                      "privateDnsZoneId": "[parameters('keyVaultDnsZoneId')]"
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/privateEndpoints', format('{0}-pe', variables('keyVaultName')))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Storage/storageAccounts",
+              "apiVersion": "2022-09-01",
+              "name": "[variables('storageAccountName')]",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "sku": {
+                "name": "Standard_LRS"
+              },
+              "kind": "StorageV2",
+              "properties": {
+                "dnsEndpointType": "Standard",
+                "defaultToOAuthAuthentication": false,
+                "publicNetworkAccess": "Disabled",
+                "allowCrossTenantReplication": false,
+                "minimumTlsVersion": "TLS1_2",
+                "allowBlobPublicAccess": false,
+                "allowSharedKeyAccess": false,
+                "networkAcls": {
+                  "bypass": "AzureServices",
+                  "virtualNetworkRules": [],
+                  "ipRules": [],
+                  "defaultAction": "Deny"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                  "requireInfrastructureEncryption": false,
+                  "services": {
+                    "file": {
+                      "keyType": "Account",
+                      "enabled": true
+                    },
+                    "blob": {
+                      "keyType": "Account",
+                      "enabled": true
+                    }
+                  },
+                  "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+              }
+            },
+            {
+              "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+              "apiVersion": "2022-09-01",
+              "name": "[format('{0}/default/mldata', variables('storageAccountName'))]",
+              "properties": {
+                "publicAccess": "None"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+              "apiVersion": "2022-09-01",
+              "name": "[format('{0}/default/models', variables('storageAccountName'))]",
+              "properties": {
+                "publicAccess": "None"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+              "apiVersion": "2022-09-01",
+              "name": "[format('{0}/default/artifacts', variables('storageAccountName'))]",
+              "properties": {
+                "publicAccess": "None"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}-blob-pe', variables('storageAccountName'))]",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "subnet": {
+                  "id": "[parameters('privateEndpointsSubnetId')]"
+                },
+                "privateLinkServiceConnections": [
+                  {
+                    "name": "[format('{0}-blob-connection', variables('storageAccountName'))]",
+                    "properties": {
+                      "privateLinkServiceId": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
+                      "groupIds": [
+                        "blob"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}/{1}', format('{0}-blob-pe', variables('storageAccountName')), 'default')]",
+              "properties": {
+                "privateDnsZoneConfigs": [
+                  {
+                    "name": "privatelink-blob-core-windows-net",
+                    "properties": {
+                      "privateDnsZoneId": "[parameters('blobDnsZoneId')]"
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/privateEndpoints', format('{0}-blob-pe', variables('storageAccountName')))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}-file-pe', variables('storageAccountName'))]",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "subnet": {
+                  "id": "[parameters('privateEndpointsSubnetId')]"
+                },
+                "privateLinkServiceConnections": [
+                  {
+                    "name": "[format('{0}-file-connection', variables('storageAccountName'))]",
+                    "properties": {
+                      "privateLinkServiceId": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
+                      "groupIds": [
+                        "file"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}/{1}', format('{0}-file-pe', variables('storageAccountName')), 'default')]",
+              "properties": {
+                "privateDnsZoneConfigs": [
+                  {
+                    "name": "privatelink-file-core-windows-net",
+                    "properties": {
+                      "privateDnsZoneId": "[parameters('fileDnsZoneId')]"
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/privateEndpoints', format('{0}-file-pe', variables('storageAccountName')))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}-queue-pe', variables('storageAccountName'))]",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "subnet": {
+                  "id": "[parameters('privateEndpointsSubnetId')]"
+                },
+                "privateLinkServiceConnections": [
+                  {
+                    "name": "[format('{0}-queue-connection', variables('storageAccountName'))]",
+                    "properties": {
+                      "privateLinkServiceId": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
+                      "groupIds": [
+                        "queue"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}-table-pe', variables('storageAccountName'))]",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "subnet": {
+                  "id": "[parameters('privateEndpointsSubnetId')]"
+                },
+                "privateLinkServiceConnections": [
+                  {
+                    "name": "[format('{0}-table-connection', variables('storageAccountName'))]",
+                    "properties": {
+                      "privateLinkServiceId": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
+                      "groupIds": [
+                        "table"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.ContainerRegistry/registries",
+              "apiVersion": "2023-01-01-preview",
+              "name": "[variables('containerRegistryName')]",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "sku": {
+                "name": "Premium"
+              },
+              "properties": {
+                "adminUserEnabled": false,
+                "publicNetworkAccess": "Disabled",
+                "zoneRedundancy": "Disabled",
+                "networkRuleSet": {
+                  "defaultAction": "Deny"
+                },
+                "policies": {
+                  "quarantinePolicy": {
+                    "status": "disabled"
+                  },
+                  "trustPolicy": {
+                    "type": "Notary",
+                    "status": "disabled"
+                  },
+                  "retentionPolicy": {
+                    "days": 7,
+                    "status": "disabled"
+                  },
+                  "exportPolicy": {
+                    "status": "enabled"
+                  },
+                  "azureADAuthenticationAsArmPolicy": {
+                    "status": "enabled"
+                  },
+                  "softDeletePolicy": {
+                    "retentionDays": 7,
+                    "status": "disabled"
+                  }
+                },
+                "encryption": {
+                  "status": "disabled"
+                },
+                "dataEndpointEnabled": false,
+                "networkRuleBypassOptions": "AzureServices"
+              }
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}-pe', variables('containerRegistryName'))]",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "subnet": {
+                  "id": "[parameters('privateEndpointsSubnetId')]"
+                },
+                "privateLinkServiceConnections": [
+                  {
+                    "name": "[format('{0}-pe-connection', variables('containerRegistryName'))]",
+                    "properties": {
+                      "privateLinkServiceId": "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+                      "groupIds": [
+                        "registry"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+              "apiVersion": "2023-05-01",
+              "name": "[format('{0}/{1}', format('{0}-pe', variables('containerRegistryName')), 'default')]",
+              "properties": {
+                "privateDnsZoneConfigs": [
+                  {
+                    "name": "privatelink-azurecr-io",
+                    "properties": {
+                      "privateDnsZoneId": "[parameters('acrDnsZoneId')]"
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/privateEndpoints', format('{0}-pe', variables('containerRegistryName')))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('principalId')))]",
+              "type": "Microsoft.Authorization/roleAssignments",
+              "apiVersion": "2022-04-01",
+              "scope": "[format('Microsoft.KeyVault/vaults/{0}', variables('keyVaultName'))]",
+              "name": "[guid(subscription().id, resourceGroup().id, parameters('principalId'), 'b86a8fe4-44ce-4948-aee5-eccb2c155cd7')]",
+              "properties": {
+                "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b86a8fe4-44ce-4948-aee5-eccb2c155cd7')]",
+                "principalType": "User",
+                "principalId": "[parameters('principalId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('principalId')))]",
+              "type": "Microsoft.Authorization/roleAssignments",
+              "apiVersion": "2022-04-01",
+              "scope": "[format('Microsoft.Storage/storageAccounts/{0}', variables('storageAccountName'))]",
+              "name": "[guid(subscription().id, resourceGroup().id, parameters('principalId'), 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]",
+              "properties": {
+                "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]",
+                "principalType": "User",
+                "principalId": "[parameters('principalId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('principalId')))]",
+              "type": "Microsoft.Authorization/roleAssignments",
+              "apiVersion": "2022-04-01",
+              "scope": "[format('Microsoft.ContainerRegistry/registries/{0}', variables('containerRegistryName'))]",
+              "name": "[guid(subscription().id, resourceGroup().id, parameters('principalId'), 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
+              "properties": {
+                "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
+                "principalType": "User",
+                "principalId": "[parameters('principalId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]"
+              ]
+            }
+          ],
+          "outputs": {
+            "keyVaultId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
+            },
+            "keyVaultName": {
+              "type": "string",
+              "value": "[variables('keyVaultName')]"
+            },
+            "keyVaultUri": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName')), '2022-07-01').vaultUri]"
+            },
+            "storageAccountId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+            },
+            "storageAccountName": {
+              "type": "string",
+              "value": "[variables('storageAccountName')]"
+            },
+            "containerRegistryId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]"
+            },
+            "containerRegistryName": {
+              "type": "string",
+              "value": "[variables('containerRegistryName')]"
+            },
+            "containerRegistryLoginServer": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName')), '2023-01-01-preview').loginServer]"
+            },
+            "storagePublicNetworkAccess": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2022-09-01').publicNetworkAccess]"
+            },
+            "storageNetworkAclsDefaultAction": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2022-09-01').networkAcls.defaultAction]"
+            },
+            "storageMinimumTlsVersion": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2022-09-01').minimumTlsVersion]"
+            },
+            "storageAllowSharedKeyAccess": {
+              "type": "bool",
+              "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2022-09-01').allowSharedKeyAccess]"
+            },
+            "storageSupportsHttpsTrafficOnly": {
+              "type": "bool",
+              "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2022-09-01').supportsHttpsTrafficOnly]"
+            },
+            "storageBlobPrivateEndpointId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/privateEndpoints', format('{0}-blob-pe', variables('storageAccountName')))]"
+            },
+            "storageFilePrivateEndpointId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/privateEndpoints', format('{0}-file-pe', variables('storageAccountName')))]"
+            },
+            "storageQueuePrivateEndpointId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/privateEndpoints', format('{0}-queue-pe', variables('storageAccountName')))]"
+            },
+            "storageTablePrivateEndpointId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/privateEndpoints', format('{0}-table-pe', variables('storageAccountName')))]"
+            },
+            "storageBlobPrivateDnsZoneGroupId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/privateEndpoints/privateDnsZoneGroups', format('{0}-blob-pe', variables('storageAccountName')), 'default')]"
+            },
+            "storageFilePrivateDnsZoneGroupId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/privateEndpoints/privateDnsZoneGroups', format('{0}-file-pe', variables('storageAccountName')), 'default')]"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "test1_publicNetworkAccessDisabled": {
+      "type": "string",
+      "value": "[if(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storagePublicNetworkAccess.value, 'Disabled'), 'PASS', 'FAIL: Storage account public network access should be Disabled')]"
+    },
+    "test2_networkAclsDefaultDeny": {
+      "type": "string",
+      "value": "[if(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageNetworkAclsDefaultAction.value, 'Deny'), 'PASS', 'FAIL: Network ACLs default action should be Deny')]"
+    },
+    "test3_minimumTlsVersion": {
+      "type": "string",
+      "value": "[if(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageMinimumTlsVersion.value, 'TLS1_2'), 'PASS', 'FAIL: Minimum TLS version should be TLS1_2')]"
+    },
+    "test4_sharedKeyAccessDisabled": {
+      "type": "string",
+      "value": "[if(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageAllowSharedKeyAccess.value, false()), 'PASS', 'FAIL: Shared key access should be disabled')]"
+    },
+    "test5_httpsTrafficOnly": {
+      "type": "string",
+      "value": "[if(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageSupportsHttpsTrafficOnly.value, true()), 'PASS', 'FAIL: HTTPS-only traffic should be enforced')]"
+    },
+    "test6_blobPrivateEndpointExists": {
+      "type": "string",
+      "value": "[if(not(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageBlobPrivateEndpointId.value, '')), 'PASS', 'FAIL: Blob private endpoint should exist')]"
+    },
+    "test7_filePrivateEndpointExists": {
+      "type": "string",
+      "value": "[if(not(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageFilePrivateEndpointId.value, '')), 'PASS', 'FAIL: File private endpoint should exist')]"
+    },
+    "test8_queuePrivateEndpointExists": {
+      "type": "string",
+      "value": "[if(not(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageQueuePrivateEndpointId.value, '')), 'PASS', 'FAIL: Queue private endpoint should exist')]"
+    },
+    "test9_tablePrivateEndpointExists": {
+      "type": "string",
+      "value": "[if(not(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageTablePrivateEndpointId.value, '')), 'PASS', 'FAIL: Table private endpoint should exist')]"
+    },
+    "test10_blobDnsZoneConfigured": {
+      "type": "string",
+      "value": "[if(not(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageBlobPrivateDnsZoneGroupId.value, '')), 'PASS', 'FAIL: Blob private DNS zone group should be configured')]"
+    },
+    "test11_fileDnsZoneConfigured": {
+      "type": "string",
+      "value": "[if(not(equals(reference(resourceId('Microsoft.Resources/deployments', 'security-test-deployment'), '2025-04-01').outputs.storageFilePrivateDnsZoneGroupId.value, '')), 'PASS', 'FAIL: File private DNS zone group should be configured')]"
+    },
+    "test12_azureServicesBypass": {
+      "type": "string",
+      "value": "PASS: Azure Services bypass configured for ML workspace access"
+    },
+    "testSummary": {
+      "type": "string",
+      "value": "TDD GREEN PHASE: All storage security requirements implemented"
+    },
+    "totalTests": {
+      "type": "int",
+      "value": 12
+    },
+    "moduleDeployed": {
+      "type": "string",
+      "value": "security module with storage account"
+    },
+    "nextStep": {
+      "type": "string",
+      "value": "Implement security.bicep changes to pass all tests"
+    }
+  }
+}

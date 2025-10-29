@@ -91,7 +91,9 @@ resource eventHub 'Microsoft.EventHub/namespaces/eventhubs@2022-10-01-preview' =
   }
 }
 
-// Synapse Analytics workspace for big data processing
+// Synapse Analytics workspace - Removed to avoid creating empty managed resource group
+// If needed in the future, uncomment this resource
+/*
 resource synapseWorkspace 'Microsoft.Synapse/workspaces@2021-06-01' = {
   name: '${abbrs.synapseWorkspaces}${replace(environmentName, '-', '')}${resourceToken}'
   location: location
@@ -111,6 +113,7 @@ resource synapseWorkspace 'Microsoft.Synapse/workspaces@2021-06-01' = {
     trustedServiceBypassEnabled: true
   }
 }
+*/
 
 // Outputs
 output workspaceName string = fabricWorkspace.name
@@ -120,4 +123,4 @@ output workspaceUrl string = 'https://app.fabric.microsoft.com/workspaces/${fabr
 output dataFactoryName string = dataFactory.name
 output eventHubNamespaceName string = eventHubNamespace.name
 output eventHubName string = eventHub.name
-output synapseWorkspaceName string = synapseWorkspace.name
+// output synapseWorkspaceName string = synapseWorkspace.name  // Removed - Synapse workspace commented out

@@ -4,6 +4,11 @@ param location string
 param resourceToken string
 param principalId string
 param tags object = {}
+param privateEndpointsSubnetId string
+param keyVaultDnsZoneId string
+param acrDnsZoneId string
+param blobDnsZoneId string
+param fileDnsZoneId string
 
 // Variables
 var abbrs = loadJsonContent('../abbreviations.json')
@@ -29,11 +34,48 @@ resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' = {
     enableSoftDelete: true
     softDeleteRetentionInDays: 90
     enableRbacAuthorization: true
-    publicNetworkAccess: 'Enabled'
+    publicNetworkAccess: 'Disabled'
     networkAcls: {
-      defaultAction: 'Allow'
+      defaultAction: 'Deny'
       bypass: 'AzureServices'
     }
+  }
+}
+
+// Private Endpoint for Key Vault
+resource keyVaultPrivateEndpoint 'Microsoft.Network/privateEndpoints@2023-05-01' = {
+  name: '${keyVaultName}-pe'
+  location: location
+  tags: tags
+  properties: {
+    subnet: {
+      id: privateEndpointsSubnetId
+    }
+    privateLinkServiceConnections: [
+      {
+        name: '${keyVaultName}-pe-connection'
+        properties: {
+          privateLinkServiceId: keyVault.id
+          groupIds: ['vault']
+        }
+      }
+    ]
+  }
+}
+
+// Private DNS Zone Group for Key Vault Private Endpoint
+resource keyVaultPrivateDnsZoneGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneGroups@2023-05-01' = {
+  parent: keyVaultPrivateEndpoint
+  name: 'default'
+  properties: {
+    privateDnsZoneConfigs: [
+      {
+        name: 'privatelink-vaultcore-azure-net'
+        properties: {
+          privateDnsZoneId: keyVaultDnsZoneId
+        }
+      }
+    ]
   }
 }
 
@@ -49,16 +91,16 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   properties: {
     dnsEndpointType: 'Standard'
     defaultToOAuthAuthentication: false
-    publicNetworkAccess: 'Enabled'
+    publicNetworkAccess: 'Disabled'
     allowCrossTenantReplication: false
     minimumTlsVersion: 'TLS1_2'
     allowBlobPublicAccess: false
-    allowSharedKeyAccess: true
+    allowSharedKeyAccess: false
     networkAcls: {
       bypass: 'AzureServices'
       virtualNetworkRules: []
       ipRules: []
-      defaultAction: 'Allow'
+      defaultAction: 'Deny'
     }
     supportsHttpsTrafficOnly: true
     encryption: {
@@ -101,18 +143,137 @@ resource artifactsContainer 'Microsoft.Storage/storageAccounts/blobServices/cont
   }
 }
 
+// Private Endpoint for Storage Account - Blob Service
+resource storageBlobPrivateEndpoint 'Microsoft.Network/privateEndpoints@2023-05-01' = {
+  name: '${storageAccountName}-blob-pe'
+  location: location
+  tags: tags
+  properties: {
+    subnet: {
+      id: privateEndpointsSubnetId
+    }
+    privateLinkServiceConnections: [
+      {
+        name: '${storageAccountName}-blob-connection'
+        properties: {
+          privateLinkServiceId: storageAccount.id
+          groupIds: ['blob']
+        }
+      }
+    ]
+  }
+}
+
+// Private DNS Zone Group for Blob Private Endpoint
+resource storageBlobPrivateDnsZoneGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneGroups@2023-05-01' = {
+  parent: storageBlobPrivateEndpoint
+  name: 'default'
+  properties: {
+    privateDnsZoneConfigs: [
+      {
+        name: 'privatelink-blob-core-windows-net'
+        properties: {
+          privateDnsZoneId: blobDnsZoneId
+        }
+      }
+    ]
+  }
+}
+
+// Private Endpoint for Storage Account - File Service
+resource storageFilePrivateEndpoint 'Microsoft.Network/privateEndpoints@2023-05-01' = {
+  name: '${storageAccountName}-file-pe'
+  location: location
+  tags: tags
+  properties: {
+    subnet: {
+      id: privateEndpointsSubnetId
+    }
+    privateLinkServiceConnections: [
+      {
+        name: '${storageAccountName}-file-connection'
+        properties: {
+          privateLinkServiceId: storageAccount.id
+          groupIds: ['file']
+        }
+      }
+    ]
+  }
+}
+
+// Private DNS Zone Group for File Private Endpoint
+resource storageFilePrivateDnsZoneGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneGroups@2023-05-01' = {
+  parent: storageFilePrivateEndpoint
+  name: 'default'
+  properties: {
+    privateDnsZoneConfigs: [
+      {
+        name: 'privatelink-file-core-windows-net'
+        properties: {
+          privateDnsZoneId: fileDnsZoneId
+        }
+      }
+    ]
+  }
+}
+
+// Private Endpoint for Storage Account - Queue Service
+resource storageQueuePrivateEndpoint 'Microsoft.Network/privateEndpoints@2023-05-01' = {
+  name: '${storageAccountName}-queue-pe'
+  location: location
+  tags: tags
+  properties: {
+    subnet: {
+      id: privateEndpointsSubnetId
+    }
+    privateLinkServiceConnections: [
+      {
+        name: '${storageAccountName}-queue-connection'
+        properties: {
+          privateLinkServiceId: storageAccount.id
+          groupIds: ['queue']
+        }
+      }
+    ]
+  }
+}
+
+// Private Endpoint for Storage Account - Table Service
+resource storageTablePrivateEndpoint 'Microsoft.Network/privateEndpoints@2023-05-01' = {
+  name: '${storageAccountName}-table-pe'
+  location: location
+  tags: tags
+  properties: {
+    subnet: {
+      id: privateEndpointsSubnetId
+    }
+    privateLinkServiceConnections: [
+      {
+        name: '${storageAccountName}-table-connection'
+        properties: {
+          privateLinkServiceId: storageAccount.id
+          groupIds: ['table']
+        }
+      }
+    ]
+  }
+}
+
 // Container Registry for ML model images
 resource containerRegistry 'Microsoft.ContainerRegistry/registries@2023-01-01-preview' = {
   name: containerRegistryName
   location: location
   tags: tags
   sku: {
-    name: 'Basic'
+    name: 'Premium'
   }
   properties: {
     adminUserEnabled: false
-    publicNetworkAccess: 'Enabled'
+    publicNetworkAccess: 'Disabled'
     zoneRedundancy: 'Disabled'
+    networkRuleSet: {
+      defaultAction: 'Deny'
+    }
     policies: {
       quarantinePolicy: {
         status: 'disabled'
@@ -141,6 +302,43 @@ resource containerRegistry 'Microsoft.ContainerRegistry/registries@2023-01-01-pr
     }
     dataEndpointEnabled: false
     networkRuleBypassOptions: 'AzureServices'
+  }
+}
+
+// Private Endpoint for Container Registry
+resource acrPrivateEndpoint 'Microsoft.Network/privateEndpoints@2023-05-01' = {
+  name: '${containerRegistryName}-pe'
+  location: location
+  tags: tags
+  properties: {
+    subnet: {
+      id: privateEndpointsSubnetId
+    }
+    privateLinkServiceConnections: [
+      {
+        name: '${containerRegistryName}-pe-connection'
+        properties: {
+          privateLinkServiceId: containerRegistry.id
+          groupIds: ['registry']
+        }
+      }
+    ]
+  }
+}
+
+// Private DNS Zone Group for ACR Private Endpoint
+resource acrPrivateDnsZoneGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneGroups@2023-05-01' = {
+  parent: acrPrivateEndpoint
+  name: 'default'
+  properties: {
+    privateDnsZoneConfigs: [
+      {
+        name: 'privatelink-azurecr-io'
+        properties: {
+          privateDnsZoneId: acrDnsZoneId
+        }
+      }
+    ]
   }
 }
 
@@ -184,3 +382,20 @@ output storageAccountName string = storageAccount.name
 output containerRegistryId string = containerRegistry.id
 output containerRegistryName string = containerRegistry.name
 output containerRegistryLoginServer string = containerRegistry.properties.loginServer
+
+// Storage Account Security Outputs for Test Validation
+output storagePublicNetworkAccess string = storageAccount.properties.publicNetworkAccess
+output storageNetworkAclsDefaultAction string = storageAccount.properties.networkAcls.defaultAction
+output storageMinimumTlsVersion string = storageAccount.properties.minimumTlsVersion
+output storageAllowSharedKeyAccess bool = storageAccount.properties.allowSharedKeyAccess
+output storageSupportsHttpsTrafficOnly bool = storageAccount.properties.supportsHttpsTrafficOnly
+
+// Storage Private Endpoint Outputs
+output storageBlobPrivateEndpointId string = storageBlobPrivateEndpoint.id
+output storageFilePrivateEndpointId string = storageFilePrivateEndpoint.id
+output storageQueuePrivateEndpointId string = storageQueuePrivateEndpoint.id
+output storageTablePrivateEndpointId string = storageTablePrivateEndpoint.id
+
+// Storage Private DNS Zone Group Outputs
+output storageBlobPrivateDnsZoneGroupId string = storageBlobPrivateDnsZoneGroup.id
+output storageFilePrivateDnsZoneGroupId string = storageFilePrivateDnsZoneGroup.id
